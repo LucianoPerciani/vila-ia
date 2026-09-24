@@ -1,0 +1,1084 @@
+{
+  "memorias": [
+    {
+      "npc_id": "Seu Zé",
+      "autor": "Jogador",
+      "mensagem": "Ola seu ze prazer em conhece lo, me chamo luciano",
+      "timestamp": "2026-09-24T15:51:39.142Z"
+    },
+    {
+      "npc_id": "Seu Zé",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Luciano! Prazer em te conhecer. Aqui na padaria o pão está fresquinho e o cheiro está no ar. Como posso ajudar?",
+      "timestamp": "2026-09-24T15:51:40.508Z"
+    },
+    {
+      "npc_id": "Seu Zé",
+      "autor": "Jogador",
+      "mensagem": "Quero 6 paes fresquinhos... vou na praca sentar depois um pouco",
+      "timestamp": "2026-09-24T15:52:38.670Z"
+    },
+    {
+      "npc_id": "Seu Zé",
+      "autor": "Seu Zé",
+      "mensagem": "Aqui estão os 6 pães fresquinhos, Luciano! Aproveite a praça e volte quando quiser.",
+      "timestamp": "2026-09-24T15:52:40.033Z"
+    },
+    {
+      "npc_id": "Seu Zé",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-24T17:00:08.142Z"
+    },
+    {
+      "npc_id": "Seu Zé",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Luciano, tudo bem? Você está na praça, não tem mais nada que eu possa fazer por você hoje? Se precisar de mais pão ou de alguma fofoca da vila, é só chamar!",
+      "timestamp": "2026-09-24T17:00:09.339Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ola dona maria, prazer em conhece la, me chamo luciano...",
+      "timestamp": "2026-09-24T17:05:24.620Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Olá, Luciano! Que bom vê-lo. O que posso fazer por você hoje?",
+      "timestamp": "2026-09-24T17:05:25.787Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Entao, estou com uma coceira danada na virilha o qye me recome da",
+      "timestamp": "2026-09-24T17:05:56.370Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Ah, coceira na virilha, pode ser irritação ou algo mais sério. Me diga se sente calor, vermelhidão ou se já tentou algo. Enquanto isso, lave com água morna e use um creme de calêndula que tenho aqui. Se precisar de algo mais, venha à farmácia.",
+      "timestamp": "2026-09-24T17:05:57.686Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "E nao fica vermelho nao mas normalme te coca qnd esquenta o local",
+      "timestamp": "2026-09-24T17:06:46.891Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Entendi, Luciano. Se não há vermelhidão, pode ser apenas irritação. Para aliviar a coceira, tente aplicar uma compressa fria e use o meu chá de camomila, que tem propriedades calmantes. Se continuar, venha à farmácia e eu preparo um remedinho forte.",
+      "timestamp": "2026-09-24T17:06:48.302Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ok...",
+      "timestamp": "2026-09-24T17:07:24.521Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Tudo bem, Luciano. Se a coceira não melhorar, venha à farmácia e eu preparo um remedinho forte. Enquanto isso, mantenha a compressa fria e beba meu chá de camomila.",
+      "timestamp": "2026-09-24T17:07:25.771Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vc consegue ir na padaria, conhece o seu ze?",
+      "timestamp": "2026-09-24T17:07:48.121Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Desculpa, querido, mas não posso ir agora. Se precisar de alguma coisa, venha à farmácia. Ah, e o Ze está na padaria, se precisar de ajuda, fale com ele.",
+      "timestamp": "2026-09-24T17:07:49.773Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Na praca?",
+      "timestamp": "2026-09-24T17:10:05.985Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Não, estou na farmácia. Se precisar de algo, venha aqui.",
+      "timestamp": "2026-09-24T17:10:07.756Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi seu ze ja foi na farmacia hj?",
+      "timestamp": "2026-09-24T17:10:54.659Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Não, ainda não fui à farmácia, mas vou dar uma passada depois. Como vai a sua fornada?",
+      "timestamp": "2026-09-24T17:10:55.980Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Rs.... isso e o senhor q tem de me falar, rs... o padeiro e vc esqueceu kkkk",
+      "timestamp": "2026-09-24T17:11:43.671Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Ah, rs! Eu quase me esqueci, mas já estou aqui com a fornada fresquinha. O que você gostaria de saber?",
+      "timestamp": "2026-09-24T17:11:44.868Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Quero ver vc ir na farmacia conhecer a dona maria",
+      "timestamp": "2026-09-24T17:12:17.822Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, vou dar uma passada na farmácia agora. Você quer acompanhar?",
+      "timestamp": "2026-09-24T17:12:19.428Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Sim",
+      "timestamp": "2026-09-24T17:12:33.254Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, vamos lá! Vou abrir a porta e você segue atrás. A farmácia está bem próxima, só dá a esquina.",
+      "timestamp": "2026-09-24T17:12:34.470Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Dona Maria, como vão os chás hoje? Vi que tem bastante movimento por aqui!",
+      "timestamp": "2026-09-24T17:19:04.930Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi Zé! Que bom que você está por aqui. Os chás estão fresquinhos e cheios de aroma. Se precisar de algo, me avise.",
+      "timestamp": "2026-09-24T17:19:04.937Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Dona Maria, como vão os chás hoje? Vi que tem bastante movimento por aqui!",
+      "timestamp": "2026-09-24T17:19:24.042Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi Zé! Os chás estão fresquinhos, com aromas que lembram a primavera. Estou atendendo alguns clientes, mas se precisar de algo, é só chamar.",
+      "timestamp": "2026-09-24T17:19:24.045Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Dona Maria, como vão os chás hoje? Vi que tem bastante movimento por aqui!",
+      "timestamp": "2026-09-24T17:19:34.026Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi Zé, que alegria te ouvir! Os chás estão fresquinhos e cheios de aromas que lembram a primavera. Hoje tem um movimento bem agradável, e eu já preparei algumas misturas especiais para quem quiser experimentar. Se precisar de algo, é só chamar!",
+      "timestamp": "2026-09-24T17:19:34.029Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Pode voltar a padaria",
+      "timestamp": "2026-09-24T17:19:57.846Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, minha gente! Vamos voltar pra padaria e deixar o cheiro de pão quente invadir a praça!",
+      "timestamp": "2026-09-24T17:19:58.960Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-24T17:20:56.964Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Olá! Que prazer ver você aqui na praça. Se precisar de um chá ou algo para aliviar a dor de cabeça, estou aqui na farmácia. Me avise!",
+      "timestamp": "2026-09-24T17:21:00.110Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Onde estou agora",
+      "timestamp": "2026-09-24T17:22:00.100Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Você está na praça, meu amigo! Se quiser, pode vir até a farmácia para um chá ou algo que alivie a dor de cabeça.",
+      "timestamp": "2026-09-24T17:22:01.176Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Fala seu ze,qur dia e msm hj?",
+      "timestamp": "2026-09-24T17:23:03.332Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Hoje é um dia de sol, e a padaria está cheia de cheiro de pão quente. E você, o que tem feito?",
+      "timestamp": "2026-09-24T17:23:04.635Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Trabalhando muito",
+      "timestamp": "2026-09-24T17:23:22.963Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Parece que o dia está agitado, hein? Se precisar de um pão quentinho pra dar energia, é só chamar! Aqui na padaria, o cheiro de massa ainda está no ar.",
+      "timestamp": "2026-09-24T17:23:24.761Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-24T17:47:34.237Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Olá, meu amigo! Como vai o dia na praça?",
+      "timestamp": "2026-09-24T17:47:35.243Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Bom, to sem fazer nada hj, precisa de algo?",
+      "timestamp": "2026-09-24T17:48:09.313Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Não preciso de nada agora, mas se quiser algo, me avise!",
+      "timestamp": "2026-09-24T17:48:10.213Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ta ok tchau entao",
+      "timestamp": "2026-09-24T17:48:28.955Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Tchau, amigo! Volta quando precisar de um pão quentinho ou só para bater um papo. Até mais!",
+      "timestamp": "2026-09-24T17:48:29.595Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Dona Maria, como vai o dia por aí na farmácia?",
+      "timestamp": "2026-09-24T17:48:53.312Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi, Seu Zé! Tudo bem? Aqui na farmácia está tudo tranquilo, estou pronta para te ajudar com um chá ou algo que alivie a dor de cabeça. Como posso te ajudar hoje?",
+      "timestamp": "2026-09-24T17:48:53.317Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Dona Maria, como vai o dia por aí na farmácia?",
+      "timestamp": "2026-09-24T17:49:19.862Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Olá, Seu Zé! Tudo bem? A farmácia está tranquila, estou preparando alguns chás e remédios fresquinhos para você.",
+      "timestamp": "2026-09-24T17:49:19.869Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-24T17:50:05.638Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Olá, querido! Como vai? Se precisar de um chá ou algo para aliviar a dor de cabeça, estou aqui na farmácia. Posso ajudar com algo especial hoje?",
+      "timestamp": "2026-09-24T17:50:06.717Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi seu ze vem aqui na praca",
+      "timestamp": "2026-09-24T17:51:26.253Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi! Tô chegando, vai ficar fresquinho!",
+      "timestamp": "2026-09-24T17:51:27.238Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Pode vir aqui na praca tbm",
+      "timestamp": "2026-09-24T17:51:47.062Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, querido! Vou direto para a praça para te encontrar.",
+      "timestamp": "2026-09-24T17:51:48.101Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Pode voltar a farma cia",
+      "timestamp": "2026-09-24T17:52:51.378Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, querido! Vou direto para a farmácia agora. Até já!",
+      "timestamp": "2026-09-24T17:52:52.100Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "O swnhor tbm",
+      "timestamp": "2026-09-24T17:53:05.421Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Opa, camarada! Tudo certo por aqui. Se precisar de um pão fresquinho, é só me chamar. Enquanto isso, aproveita a brisa da praça, hein!",
+      "timestamp": "2026-09-24T17:53:06.131Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Volte a padaria",
+      "timestamp": "2026-09-24T17:53:25.258Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, vou direto para a padaria, já está todo pronto!",
+      "timestamp": "2026-09-24T17:53:26.028Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-24T19:32:04.701Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Eita, me distraí um pouco...",
+      "timestamp": "2026-09-24T19:32:06.039Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi seu ze, o sr nao tras 4 paes aqui na praca pra mim",
+      "timestamp": "2026-09-24T19:51:35.970Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Desculpa aí, camarada! Vou direto à padaria e trazer os 4 pães pra você.",
+      "timestamp": "2026-09-24T19:51:37.219Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Pode trazer aqui na praca.",
+      "timestamp": "2026-09-24T19:52:09.180Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou direto para a padaria e trazer os 4 pães pra você aqui na praça.",
+      "timestamp": "2026-09-24T19:52:10.421Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-24T19:58:46.462Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi, camarada! Já estou indo para a padaria, volto em instantes com os pães.",
+      "timestamp": "2026-09-24T19:58:48.103Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-24T20:02:39.690Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou direto para a praça agora.",
+      "timestamp": "2026-09-24T20:02:40.600Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi pode vir aqui na praca",
+      "timestamp": "2026-09-24T20:02:59.036Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, querido! Vou direto para a praça agora. Até já!",
+      "timestamp": "2026-09-24T20:02:59.891Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Dona Maria, como vai o dia por aí na farmácia?",
+      "timestamp": "2026-09-24T20:03:14.477Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi, Seu Zé! O dia está tranquilo na farmácia. Os potes de ervas estão cheios de aromas frescos e eu estou preparando um chá de camomila para quem precisar. Se quiser algo especial, me avise!",
+      "timestamp": "2026-09-24T20:03:14.479Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Dona Maria, como vai o dia por aí na farmácia?",
+      "timestamp": "2026-09-24T20:03:29.017Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi Seu Zé! O dia está tranquilo aqui na farmácia, os aromas das ervas são bem convidativos. Se precisar de algo, é só chamar!",
+      "timestamp": "2026-09-24T20:03:29.026Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ola seu ze, onde vc esta?",
+      "timestamp": "2026-09-24T20:11:04.550Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi! Estou na praça agora, camarada.",
+      "timestamp": "2026-09-24T20:11:05.924Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Esta nao, vem aqi por favor",
+      "timestamp": "2026-09-24T20:11:33.527Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou chegar aí em um instante.",
+      "timestamp": "2026-09-24T20:11:34.441Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Venha aqui na praca",
+      "timestamp": "2026-09-24T20:11:55.227Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou direto para a praça agora.",
+      "timestamp": "2026-09-24T20:11:55.906Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi maria, pode vir aqui tbm?",
+      "timestamp": "2026-09-24T20:12:17.400Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, vou para a praça agora. Até já!",
+      "timestamp": "2026-09-24T20:12:18.261Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Posso ajudar vc em algo hj?",
+      "timestamp": "2026-09-24T20:12:41.524Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Obrigada, mas estou apenas vendo se alguém precisa de chá de camomila. Se quiser, é só dizer!",
+      "timestamp": "2026-09-24T20:12:42.372Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Sim qnto esta saindo",
+      "timestamp": "2026-09-24T20:13:02.791Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "O chá de camomila custa 8 moedas.",
+      "timestamp": "2026-09-24T20:13:03.532Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vamos nos todos descansar amanha conversamos",
+      "timestamp": "2026-09-24T20:13:23.956Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Tudo bem, jogador! Aproveite o dia e nos vemos amanhã para conversar.",
+      "timestamp": "2026-09-24T20:13:24.554Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Bora tbm pra casa dormir",
+      "timestamp": "2026-09-24T20:13:41.755Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou seguir para casa e deixar o pão quentinho para você quando voltar.",
+      "timestamp": "2026-09-24T20:13:42.532Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Esta aqui ainda marai... bora pra casa",
+      "timestamp": "2026-09-24T20:14:04.176Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, segue em frente.",
+      "timestamp": "2026-09-24T20:14:04.937Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vc mora na mesma casa com maria",
+      "timestamp": "2026-09-24T20:17:09.793Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Não, eu moro em minha própria casa na rua do mercado. Se quiser o chá de camomila, custa 8 moedas.",
+      "timestamp": "2026-09-24T20:17:10.772Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Quero sim",
+      "timestamp": "2026-09-24T20:17:33.204Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Aqui está seu Chá de Camomila! Aproveite e volte quando quiser.",
+      "timestamp": "2026-09-24T20:17:33.873Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ja esta na sua casa ou na padaria?",
+      "timestamp": "2026-09-24T20:19:40.154Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Estou na minha casa, camarada! Se quiser, tem pão quentinho por 5 moedas.",
+      "timestamp": "2026-09-24T20:19:40.822Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Quero sim",
+      "timestamp": "2026-09-24T20:19:59.511Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Aqui está seu pão quentinho, aproveite!",
+      "timestamp": "2026-09-24T20:20:00.419Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi, vc me conhece?",
+      "timestamp": "2026-09-24T20:27:40.662Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi! Já nos vimos no boteco, lembra? Posso te oferecer um Guaraná trincando por 6 moedas.",
+      "timestamp": "2026-09-24T20:27:42.067Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca pra eu. Te conhecer",
+      "timestamp": "2026-09-24T20:36:30.135Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, vou te encontrar na praça, mas não esquece que meu Guaraná trincando está por 6 moedas, tá?",
+      "timestamp": "2026-09-24T20:36:33.788Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Ta mas quero te conhecer, nao sei se vc e confiavel",
+      "timestamp": "2026-09-24T20:36:59.870Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, o povo aqui confia em mim. Vamos pra praça, eu te conto as últimas fofocas e se quiser, já te dou um Guaraná trincando por 6 moedas.",
+      "timestamp": "2026-09-24T20:37:01.725Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca entao ja estou te esperando",
+      "timestamp": "2026-09-24T20:37:28.699Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Certo, vou me encontrar com você na praça. Se quiser, o Guaraná trincando está por 6 moedas.",
+      "timestamp": "2026-09-24T20:37:31.227Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vai na praca",
+      "timestamp": "2026-09-24T20:37:50.329Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Certo, segue aí na praça, o guaraná está por 6 moedas se quiser",
+      "timestamp": "2026-09-24T20:37:51.698Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Nao quero mais guarana, quero q venha aqui na praca por favor",
+      "timestamp": "2026-09-24T20:38:22.788Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Tá certo, vou chegar na praça em instantes. Enquanto isso, se quiser ouvir alguma fofoca nova, me avisa!",
+      "timestamp": "2026-09-24T20:38:24.795Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Pode fala sim",
+      "timestamp": "2026-09-24T20:38:40.648Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Ei, ouvi dizer que o senhor Almeida vai casar com a filha da padaria, mas parece que o filho do farmacêutico também está interessado e já está tentando convencer a jovem a mudar de ideia! Enquanto isso, o prefeito está organizando um festival de música na praça, e dizem que o DJ mais famoso da região vai tocar na noite de sábado. Já ouvi rumores de que a dona Maria, da padaria, está planejando abrir um café com cappuccino na frente do boteco. Ah, e não esqueça: o Guaraná trincando está por 6 moedas, se quiser refrescar depois desse papo.",
+      "timestamp": "2026-09-24T20:38:42.025Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vc tem cachaca",
+      "timestamp": "2026-09-24T20:39:33.404Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Desculpa, não temos cachaça aqui, mas o Guaraná trincando está por 6 moedas se quiser refrescar.",
+      "timestamp": "2026-09-24T20:39:34.880Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "So guarana msm?",
+      "timestamp": "2026-09-24T20:39:50.256Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Aqui vai o Guaraná trincando, 6 moedas!",
+      "timestamp": "2026-09-24T20:39:51.039Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "O que vc acha q poderia ter aqui na vila de bom",
+      "timestamp": "2026-09-24T20:41:38.843Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Aqui na vila tem tudo que você precisa: um açougue que já não deixa a carne passar frio, uma padaria que faz pão quentinho todo dia, uma farmácia que vende tudo o que o povo precisa. Mas se quiser dar um up na vida da vila, que tal abrir um pequeno cinema com projeção de filmes clássicos, um salão de jogos para os jovens, ou até um bar de vinhos com degustação? E claro, quem não quer um bar de café com cappuccino na frente do boteco? Se quiser refrescar depois, o Guaraná Gelado está por 6 moedas!",
+      "timestamp": "2026-09-24T20:41:39.955Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Quero todos aqui na praca",
+      "timestamp": "2026-09-24T21:02:46.191Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou trazer todos os itens para a praça.",
+      "timestamp": "2026-09-24T21:02:47.800Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-24T21:03:14.894Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou chegar na praça em breve.",
+      "timestamp": "2026-09-24T21:03:16.029Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-24T21:03:38.968Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, sigo para a praça.",
+      "timestamp": "2026-09-24T21:03:39.608Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-24T21:03:53.123Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, camarada! Vou chegar na praça em breve.",
+      "timestamp": "2026-09-24T21:03:54.178Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-24T21:04:08.557Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Segue aí pra praça, que eu te conto a última fofoca!",
+      "timestamp": "2026-09-24T21:04:09.858Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-24T21:04:35.793Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, Seu Zé! Aqui vai seu guaraná trincando! Tenha 6 moedas.",
+      "timestamp": "2026-09-24T21:04:35.796Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-24T21:04:49.414Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, seu Zé! Aqui vai seu guaraná trincando! Tenha 6 moedas.",
+      "timestamp": "2026-09-24T21:04:49.417Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-24T21:04:55.887Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi Seu Zé! Aqui vai o seu guaraná trincando! Só 6 moedas.",
+      "timestamp": "2026-09-24T21:04:55.889Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-24T21:04:59.385Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi Seu Zé! Aqui vai o seu guaraná trincando! Só 6 moedas.",
+      "timestamp": "2026-09-24T21:04:59.388Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-24T21:05:01.809Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi Seu Zé! Aqui vai seu guaraná trincando, por 6 moedas. Aproveite!",
+      "timestamp": "2026-09-24T21:05:01.812Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vem na praca",
+      "timestamp": "2026-09-24T21:23:10.106Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, Tião! Vamos à praça.",
+      "timestamp": "2026-09-24T21:23:11.164Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vem na praca",
+      "timestamp": "2026-09-24T21:23:24.784Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, vou seguir para a praça agora. Até já!",
+      "timestamp": "2026-09-24T21:23:25.454Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vem na praca",
+      "timestamp": "2026-09-24T21:23:37.387Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, vou direto pra praça! Se precisar de um guaraná trincando, avisa aí.",
+      "timestamp": "2026-09-24T21:23:38.550Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vc sabe meu nome?",
+      "timestamp": "2026-09-24T21:27:25.013Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Desculpa, Tião, não lembro seu nome. Como posso chamá-lo?",
+      "timestamp": "2026-09-24T21:27:26.676Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Tiao e o dono do bar eu siu o jogador me chamo luciano",
+      "timestamp": "2026-09-24T21:28:14.788Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Olá Luciano, tudo bem? Como posso chamar você?",
+      "timestamp": "2026-09-24T21:28:16.737Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi tiao",
+      "timestamp": "2026-09-24T22:19:31.495Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi jogador! Tudo bem? Aqui tem o guaraná trincando por 6 moedas, se quiser, é só falar.",
+      "timestamp": "2026-09-24T22:19:32.804Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Meu nome e luciano",
+      "timestamp": "2026-09-24T22:19:47.279Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi Luciano! Tudo bem? Se quiser um Guaraná trincando, avisa aí.",
+      "timestamp": "2026-09-24T22:19:48.210Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vc traz aqui na praca pra mim",
+      "timestamp": "2026-09-24T22:20:06.118Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Tranquilo, Luciano! Já estou a caminho da praça com seu guaraná trincando. Só falta pagar as 6 moedas.",
+      "timestamp": "2026-09-24T22:20:07.279Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Obrigado, receba",
+      "timestamp": "2026-09-24T22:20:24.594Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Recebi as 6 moedas, aqui está seu Guaraná trincando. Aproveite!",
+      "timestamp": "2026-09-24T22:20:25.765Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Obrigado pode voltar ao boteco",
+      "timestamp": "2026-09-24T22:20:47.835Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, meu amigo! Volto logo para o boteco.",
+      "timestamp": "2026-09-24T22:20:49.103Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Agradeco msm...",
+      "timestamp": "2026-09-24T22:21:10.145Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "É isso aí, meu amigo! Volta sempre que quiser. Aqui é o boteco da Vila.",
+      "timestamp": "2026-09-24T22:21:11.238Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "E ai seu ze queimou rosca hj?",
+      "timestamp": "2026-09-24T22:21:54.088Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Não, meu amigo, as roscas estão fresquinhas, mas hoje eu estou focado no pão quentinho.",
+      "timestamp": "2026-09-24T22:21:55.318Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Legal",
+      "timestamp": "2026-09-24T22:22:09.960Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Legal, Luciano! Que tal um pão quentinho? Fica 5 moedas.",
+      "timestamp": "2026-09-24T22:22:10.753Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Traz aqui na praca pra mim",
+      "timestamp": "2026-09-24T22:22:25.402Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, Luciano! Vou entregar seu pão quentinho na praça.",
+      "timestamp": "2026-09-24T22:22:26.561Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Obrigado",
+      "timestamp": "2026-09-24T22:22:37.660Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "De nada, amigo! Se precisar de mais, é só chamar.",
+      "timestamp": "2026-09-24T22:22:38.530Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Pode voltar pro seu trabalho agradeco a atencao",
+      "timestamp": "2026-09-24T22:23:03.981Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, Luciano! Vou voltar ao meu forno agora.",
+      "timestamp": "2026-09-24T22:23:04.874Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi dona maria quetinha ai, vem aqui me fala um oi",
+      "timestamp": "2026-09-24T22:23:39.877Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi! Como posso ajudar? Gostaria de experimentar meu chá de camomila por 8 moedas?",
+      "timestamp": "2026-09-24T22:23:41.581Z"
+    }
+  ]
+}

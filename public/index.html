@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Vila 3D - Moradores Articulados sem Sobreposição</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0; overflow: hidden;
+      background-color: #000; font-family: Arial, sans-serif; color: #fff;
+    }
+
+    #webgl-container { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 1; }
+
+    #top-bar {
+      position: absolute; top: 15px; left: 15px; z-index: 10;
+      display: flex; gap: 8px; align-items: center;
+    }
+
+    .hud-box {
+      background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(255,255,255,0.2);
+      color: #ffb703; padding: 8px 12px; border-radius: 8px; font-weight: bold;
+      backdrop-filter: blur(4px); font-size: 0.85rem;
+    }
+
+    #inventory-bar {
+      position: absolute; top: 60px; left: 15px; z-index: 10;
+      background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px; border-radius: 8px; width: 220px; font-size: 0.8rem;
+    }
+
+    #dpad {
+      position: absolute; bottom: 20px; left: 15px; z-index: 10;
+      display: grid; grid-template-columns: repeat(3, 42px); grid-template-rows: repeat(3, 42px); gap: 5px;
+    }
+
+    .dbtn {
+      background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 1.1rem; font-weight: bold; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none; touch-action: manipulation;
+    }
+
+    #chat-panel {
+      position: absolute; bottom: 20px; right: 15px;
+      width: calc(100% - 170px); max-width: 380px;
+      background: rgba(22, 33, 62, 0.92); padding: 10px; border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6); z-index: 10; backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .npc-select-box { margin-bottom: 6px; display: flex; gap: 6px; align-items: center; }
+    select, .action-btn {
+      padding: 6px; border-radius: 6px; background: #0f3460; color: #fff;
+      border: 1px solid rgba(255,255,255,0.2); font-size: 0.8rem;
+    }
+    .action-btn { background: #ffb703; color: #000; font-weight: bold; cursor: pointer; }
+
+    #chatLog {
+      height: 95px; overflow-y: auto; border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px; background: rgba(15, 23, 42, 0.85); border-radius: 6px;
+      margin-bottom: 6px; font-size: 0.8rem;
+    }
+
+    .msg { margin: 3px 0; padding: 5px 8px; border-radius: 5px; }
+    .msg.voce { background: #1f4068; text-align: right; }
+    .msg.seu_ze { background: #e94560; }
+    .msg.dona_maria { background: #db2777; }
+    .msg.tiao_bar { background: #d97706; }
+
+    .input-box { display: flex; gap: 4px; }
+    input[type="text"] {
+      flex: 1; padding: 8px; border: none; border-radius: 6px;
+      background: #0f3460; color: #fff; outline: none; font-size: 0.85rem;
+    }
+    button { padding: 8px 12px; border: none; border-radius: 6px; background: #e94560; color: #fff; font-weight: bold; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+  <div id="webgl-container"></div>
+
+  <div id="top-bar">
+    <div class="hud-box" id="relogioHud">🕒 10:00 AM</div>
+    <div class="hud-box" id="moedasHud">🪙 50 Moedas</div>
+  </div>
+
+  <div id="inventory-bar">
+    <strong>📦 Mochila:</strong>
+    <ul id="listaInventario" style="margin: 4px 0 0 16px; padding: 0;">
+      <li>Vazia</li>
+    </ul>
+  </div>
+
+  <div id="dpad">
+    <div></div>
+    <div class="dbtn" onclick="moverJogador(0, -2)">⬆️</div>
+    <div></div>
+    <div class="dbtn" onclick="moverJogador(-2, 0)">⬅️</div>
+    <div class="dbtn" onclick="moverJogador(0, 2)">⬇️</div>
+    <div class="dbtn" onclick="moverJogador(2, 0)">➡️</div>
+  </div>
+
+  <div id="chat-panel">
+    <div class="npc-select-box">
+      <select id="selectNpc">
+        <option value="seu_ze">Seu Zé (Padaria)</option>
+        <option value="dona_maria">Dona Maria (Farmácia)</option>
+        <option value="tiao_bar">Tião (Boteco)</option>
+      </select>
+      <button class="action-btn" onclick="fazerNpcsConversarem()">💬 Fofocar</button>
+    </div>
+
+    <div id="chatLog"></div>
+    <div class="input-box">
+      <input type="text" id="inputMensagem" placeholder="Falar com morador..." onkeypress="if(event.key==='Enter') enviarMensagem()">
+      <button onclick="enviarMensagem()">Mandar</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    let moedas = 50;
+    let inventario = [];
+
+    function falarVozNavegador(texto) {
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR';
+        utterance.rate = 1.0;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    // --- THREE.JS CENA ---
+    const container = document.getElementById('webgl-container');
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x38bdf8);
+    scene.fog = new THREE.FogExp2(0x38bdf8, 0.008);
+
+    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 18, 24);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    container.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.maxPolarAngle = Math.PI / 2 - 0.05;
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    scene.add(ambientLight);
+
+    const sunLight = new THREE.DirectionalLight(0xfffad5, 0.9);
+    sunLight.position.set(30, 50, 30);
+    sunLight.castShadow = true;
+    scene.add(sunLight);
+
+    // --- CENÁRIO ---
+    const floorGeo = new THREE.PlaneGeometry(120, 120);
+    const floorMat = new THREE.MeshStandardMaterial({ color: 0x48bb78, roughness: 0.9 });
+    const floor = new THREE.Mesh(floorGeo, floorMat);
+    floor.rotation.x = -Math.PI / 2;
+    floor.receiveShadow = true;
+    scene.add(floor);
+
+    const ruaMat = new THREE.MeshStandardMaterial({ color: 0x475569, roughness: 0.8 });
+    const ruaNS = new THREE.Mesh(new THREE.PlaneGeometry(14, 120), ruaMat);
+    ruaNS.rotation.x = -Math.PI / 2; ruaNS.position.y = 0.01; scene.add(ruaNS);
+    const ruaLO = new THREE.Mesh(new THREE.PlaneGeometry(120, 14), ruaMat);
+    ruaLO.rotation.x = -Math.PI / 2; ruaLO.position.y = 0.01; scene.add(ruaLO);
+
+    const pontos3D = {
+      padaria: { x: -24, z: -24, cor: 0xd97706 },
+      casa: { x: 24, z: -24, cor: 0x4f46e5 },
+      farmacia: { x: 24, z: 24, cor: 0xdb2777 },
+      boteco: { x: -24, z: 24, cor: 0xb45309 },
+      praca: { x: 0, z: 0 }
+    };
+
+    function criarPredioMinecraft(x, z, corParede) {
+      const g = new THREE.Group();
+      const parede = new THREE.Mesh(new THREE.BoxGeometry(14, 8, 14), new THREE.MeshStandardMaterial({ color: corParede, roughness: 0.6 }));
+      parede.position.y = 4; parede.castShadow = true; g.add(parede);
+
+      const t1 = new THREE.Mesh(new THREE.BoxGeometry(16, 2, 16), new THREE.MeshStandardMaterial({ color: 0x1e293b }));
+      t1.position.y = 9; g.add(t1);
+      const t2 = new THREE.Mesh(new THREE.BoxGeometry(12, 2, 12), new THREE.MeshStandardMaterial({ color: 0x1e293b }));
+      t2.position.y = 11; g.add(t2);
+
+      const porta = new THREE.Mesh(new THREE.BoxGeometry(3, 5, 0.4), new THREE.MeshStandardMaterial({ color: 0x3f2314 }));
+      porta.position.set(0, 2.5, 7.1); g.add(porta);
+
+      g.position.set(x, 0, z);
+      scene.add(g);
+    }
+
+    criarPredioMinecraft(pontos3D.padaria.x, pontos3D.padaria.z, pontos3D.padaria.cor);
+    criarPredioMinecraft(pontos3D.casa.x, pontos3D.casa.z, pontos3D.casa.cor);
+    criarPredioMinecraft(pontos3D.farmacia.x, pontos3D.farmacia.z, pontos3D.farmacia.cor);
+    criarPredioMinecraft(pontos3D.boteco.x, pontos3D.boteco.z, pontos3D.boteco.cor);
+
+    // --- CONSTRUTOR DE PERSONAGEM ARTICULADO ---
+    function criarPersonagemArticulado(corCamisa, corCalca, acessorio) {
+      const g = new THREE.Group();
+
+      const matPele = new THREE.MeshStandardMaterial({ color: 0xfcb37c, roughness: 0.5 });
+      const matCamisa = new THREE.MeshStandardMaterial({ color: corCamisa, roughness: 0.5 });
+      const matCalca = new THREE.MeshStandardMaterial({ color: corCalca, roughness: 0.5 });
+
+      // Tronco
+      const tronco = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.6, 0.6), matCamisa);
+      tronco.position.y = 2.0; tronco.castShadow = true; g.add(tronco);
+
+      // Cabeça
+      const cabeca = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.2, 1.2), matPele);
+      cabeca.position.y = 3.4; cabeca.castShadow = true; g.add(cabeca);
+
+      const matOlho = new THREE.MeshBasicMaterial({ color: 0x000000 });
+      const o1 = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.1), matOlho);
+      o1.position.set(-0.3, 3.5, 0.62); g.add(o1);
+      const o2 = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.1), matOlho);
+      o2.position.set(0.3, 3.5, 0.62); g.add(o2);
+
+      // Braço Esquerdo
+      const pivotBracoEsq = new THREE.Group();
+      pivotBracoEsq.position.set(-0.85, 2.7, 0);
+      const meshBracoEsq = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.5, 0.4), matCamisa);
+      meshBracoEsq.position.y = -0.65; meshBracoEsq.castShadow = true;
+      pivotBracoEsq.add(meshBracoEsq); g.add(pivotBracoEsq);
+
+      // Braço Direito
+      const pivotBracoDir = new THREE.Group();
+      pivotBracoDir.position.set(0.85, 2.7, 0);
+      const meshBracoDir = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.5, 0.4), matCamisa);
+      meshBracoDir.position.y = -0.65; meshBracoDir.castShadow = true;
+      pivotBracoDir.add(meshBracoDir); g.add(pivotBracoDir);
+
+      // Perna Esquerda
+      const pivotPernaEsq = new THREE.Group();
+      pivotPernaEsq.position.set(-0.35, 1.2, 0);
+      const meshPernaEsq = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.2, 0.5), matCalca);
+      meshPernaEsq.position.y = -0.6; meshPernaEsq.castShadow = true;
+      pivotPernaEsq.add(meshPernaEsq); g.add(pivotPernaEsq);
+
+      // Perna Direita
+      const pivotPernaDir = new THREE.Group();
+      pivotPernaDir.position.set(0.35, 1.2, 0);
+      const meshPernaDir = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.2, 0.5), matCalca);
+      meshPernaDir.position.y = -0.6; meshPernaDir.castShadow = true;
+      pivotPernaDir.add(meshPernaDir); g.add(pivotPernaDir);
+
+      // Chapéu
+      if (acessorio === 'chapeu') {
+        const chap = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.3, 1.5), new THREE.MeshStandardMaterial({ color: 0xffffff }));
+        chap.position.y = 4.1; g.add(chap);
+      }
+
+      g.userData = { pivotBracoEsq, pivotBracoDir, pivotPernaEsq, pivotPernaDir };
+      return g;
+    }
+
+    // Instanciação dos Moradores
+    const seuZeGroup = criarPersonagemArticulado(0xef4444, 0x1e293b, 'chapeu');
+    seuZeGroup.position.set(pontos3D.padaria.x, 0, pontos3D.padaria.z + 9); scene.add(seuZeGroup);
+
+    const donaMariaGroup = criarPersonagemArticulado(0xec4899, 0x831843, null);
+    donaMariaGroup.position.set(pontos3D.farmacia.x, 0, pontos3D.farmacia.z - 9); scene.add(donaMariaGroup);
+
+    const tiaoGroup = criarPersonagemArticulado(0xf59e0b, 0x1e3a8a, null);
+    tiaoGroup.position.set(pontos3D.boteco.x, 0, pontos3D.boteco.z - 9); scene.add(tiaoGroup);
+
+    const playerGroup = criarPersonagemArticulado(0x0284c7, 0x0f172a, null);
+    playerGroup.position.set(pontos3D.praca.x, 0, pontos3D.praca.z + 5); scene.add(playerGroup);
+
+    let alvoZe = { x: seuZeGroup.position.x, z: seuZeGroup.position.z };
+    let alvoMaria = { x: donaMariaGroup.position.x, z: donaMariaGroup.position.z };
+    let alvoTiao = { x: tiaoGroup.position.x, z: tiaoGroup.position.z };
+
+    function moverJogador(dx, dz) {
+      playerGroup.position.x += dx;
+      playerGroup.position.z += dz;
+      playerGroup.rotation.y = Math.atan2(dx, dz);
+      camera.position.x += dx; camera.position.z += dz;
+      controls.target.set(playerGroup.position.x, playerGroup.position.y + 2, playerGroup.position.z);
+    }
+    controls.target.set(playerGroup.position.x, playerGroup.position.y + 2, playerGroup.position.z);
+
+    function animarPassos(group, andando, tempo) {
+      const u = group.userData;
+      if (andando) {
+        const angulo = Math.sin(tempo * 10) * 0.7;
+        u.pivotBracoEsq.rotation.x = angulo;
+        u.pivotBracoDir.rotation.x = -angulo;
+        u.pivotPernaEsq.rotation.x = -angulo;
+        u.pivotPernaDir.rotation.x = angulo;
+      } else {
+        u.pivotBracoEsq.rotation.x = 0;
+        u.pivotBracoDir.rotation.x = 0;
+        u.pivotPernaEsq.rotation.x = 0;
+        u.pivotPernaDir.rotation.x = 0;
+      }
+    }
+
+    // LOOP ANIMATION
+    let tempoGlobal = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      tempoGlobal += 0.05;
+
+      // Movimento Seu Zé
+      const dxZe = alvoZe.x - seuZeGroup.position.x; const dzZe = alvoZe.z - seuZeGroup.position.z;
+      if (Math.sqrt(dxZe * dxZe + dzZe * dzZe) > 0.2) {
+        seuZeGroup.position.x += dxZe * 0.04; seuZeGroup.position.z += dzZe * 0.04;
+        seuZeGroup.rotation.y = Math.atan2(dxZe, dzZe);
+        animarPassos(seuZeGroup, true, tempoGlobal);
+      } else { animarPassos(seuZeGroup, false, tempoGlobal); }
+
+      // Movimento Dona Maria
+      const dxMaria = alvoMaria.x - donaMariaGroup.position.x; const dzMaria = alvoMaria.z - donaMariaGroup.position.z;
+      if (Math.sqrt(dxMaria * dxMaria + dzMaria * dzMaria) > 0.2) {
+        donaMariaGroup.position.x += dxMaria * 0.04; donaMariaGroup.position.z += dzMaria * 0.04;
+        donaMariaGroup.rotation.y = Math.atan2(dxMaria, dzMaria);
+        animarPassos(donaMariaGroup, true, tempoGlobal);
+      } else { animarPassos(donaMariaGroup, false, tempoGlobal); }
+
+      // Movimento Tião
+      const dxTiao = alvoTiao.x - tiaoGroup.position.x; const dzTiao = alvoTiao.z - tiaoGroup.position.z;
+      if (Math.sqrt(dxTiao * dxTiao + dzTiao * dzTiao) > 0.2) {
+        tiaoGroup.position.x += dxTiao * 0.04; tiaoGroup.position.z += dzTiao * 0.04;
+        tiaoGroup.rotation.y = Math.atan2(dxTiao, dzTiao);
+        animarPassos(tiaoGroup, true, tempoGlobal);
+      } else { animarPassos(tiaoGroup, false, tempoGlobal); }
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // WEBSOCKETS
+    socket.on('atualizar_horario', (data) => {
+      document.getElementById('relogioHud').innerText = `🕒 ${String(data.hora).padStart(2, '0')}:00`;
+    });
+
+    socket.on('resposta_npc', (data) => {
+      const { npcId, decisao } = data;
+      adicionarMensagemChat(npcId, decisao.fala);
+      falarVozNavegador(decisao.fala);
+      atualizarMovimentoNpc(npcId, decisao.destino);
+
+      if (decisao.venda && decisao.venda.item && moedas >= decisao.venda.preco) {
+        moedas -= decisao.venda.preco;
+        inventario.push(decisao.venda.item);
+        atualizarHud();
+      }
+    });
+
+    socket.on('conversa_entre_npcs', (data) => {
+      adicionarMensagemChat(data.falante, data.fala);
+      falarVozNavegador(data.fala);
+      atualizarMovimentoNpc(data.falante, data.decisao.destino);
+    });
+
+    function atualizarHud() {
+      document.getElementById('moedasHud').innerText = `🪙 ${moedas} Moedas`;
+      const lista = document.getElementById('listaInventario');
+      lista.innerHTML = inventario.length === 0 ? '<li>Vazia</li>' : inventario.map(i => `<li>${i}</li>`).join('');
+    }
+
+    function adicionarMensagemChat(npcId, texto) {
+      const log = document.getElementById('chatLog');
+      let nome = "Você"; let cssClass = "voce";
+      if (npcId === 'seu_ze') { nome = 'Seu Zé'; cssClass = 'seu_ze'; }
+      else if (npcId === 'dona_maria') { nome = 'Dona Maria'; cssClass = 'dona_maria'; }
+      else if (npcId === 'tiao_bar') { nome = 'Tião do Bar'; cssClass = 'tiao_bar'; }
+
+      log.innerHTML += `<div class="msg ${cssClass}"><strong>${nome}:</strong> ${texto}</div>`;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    // Posições em triângulo/círculo para evitar sobreposição no mesmo destino
+    const offsetsIniciais = {
+      seu_ze: { x: -3.0, z: 2.0 },
+      dona_maria: { x: 3.0, z: 2.0 },
+      tiao_bar: { x: 0.0, z: -3.0 }
+    };
+
+    function atualizarMovimentoNpc(npcId, destino) {
+      if (!destino) return;
+      const destLimpo = String(destino).toLowerCase();
+      let chave = null;
+      if (destLimpo.includes('casa')) chave = 'casa';
+      else if (destLimpo.includes('padaria')) chave = 'padaria';
+      else if (destLimpo.includes('praca') || destLimpo.includes('praça')) chave = 'praca';
+      else if (destLimpo.includes('farmacia') || destLimpo.includes('farmácia')) chave = 'farmacia';
+      else if (destLimpo.includes('boteco') || destLimpo.includes('bar')) chave = 'boteco';
+
+      if (chave && pontos3D[chave]) {
+        const d = pontos3D[chave];
+        const offset = offsetsIniciais[npcId] || { x: 0, z: 0 };
+        const deslocamentoPredioX = chave === 'praca' ? 0 : (d.x > 0 ? -7 : 7);
+        const deslocamentoPredioZ = chave === 'praca' ? 0 : (d.z > 0 ? -7 : 7);
+
+        const xFinal = d.x + deslocamentoPredioX + offset.x;
+        const zFinal = d.z + deslocamentoPredioZ + offset.z;
+
+        if (npcId === 'seu_ze') { alvoZe.x = xFinal; alvoZe.z = zFinal; }
+        else if (npcId === 'dona_maria') { alvoMaria.x = xFinal; alvoMaria.z = zFinal; }
+        else if (npcId === 'tiao_bar') { alvoTiao.x = xFinal; alvoTiao.z = zFinal; }
+      }
+    }
+
+    function enviarMensagem() {
+      const input = document.getElementById('inputMensagem');
+      const npcSelect = document.getElementById('selectNpc');
+      const msg = input.value.trim();
+      if (!msg) return;
+
+      adicionarMensagemChat('voce', msg);
+      socket.emit('falar_com_npc', {
+        npcId: npcSelect.value,
+        mensagem: msg,
+        contextoMundo: { horario: "Dia" }
+      });
+      input.value = '';
+    }
+
+    function fazerNpcsConversarem() {
+      adicionarMensagemChat('seu_ze', 'Oi Tião, me serve um guaraná gelado!');
+      socket.emit('npc_conversar_npc', {
+        npcOrigem: 'seu_ze',
+        npcDestino: 'tiao_bar',
+        falaInicial: 'Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!'
+      });
+    }
+  </script>
+</body>
+</html>
