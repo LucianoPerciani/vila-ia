@@ -1079,6 +1079,1002 @@
       "autor": "Dona Maria",
       "mensagem": "Oi! Como posso ajudar? Gostaria de experimentar meu chá de camomila por 8 moedas?",
       "timestamp": "2026-09-24T22:23:41.581Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ola seu ze tem algum servico ai pra mim?",
+      "timestamp": "2026-09-25T11:19:56.984Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, amigo! Posso entregar mais um pão quentinho na praça.",
+      "timestamp": "2026-09-25T11:19:58.554Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Posso trabalhar pra vc",
+      "timestamp": "2026-09-25T11:20:22.963Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, venha trabalhar na padaria! Preciso de ajuda para assar mais pães quentinhos.",
+      "timestamp": "2026-09-25T11:20:23.637Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Pronto estou aqui",
+      "timestamp": "2026-09-25T11:20:46.982Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Bem-vindo, amigo! Pronto para ajudar a assar mais pães quentinhos? Ou prefere comprar um?",
+      "timestamp": "2026-09-25T11:20:47.980Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vou ajudar, me explique o que eu tenho q fazer",
+      "timestamp": "2026-09-25T11:21:16.763Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, amigo! Primeiro, pegue a farinha na despensa e coloque-a na batedeira. Depois, adicione água morna, fermento e um pouco de sal. Bata tudo até formar uma massa lisa e elástica. Em seguida, deixe a massa descansar por cerca de 30 minutos para crescer. Enquanto isso, pré-aqueça o forno a 200°C. Depois de crescer, abra a massa em forma de rolinhos, coloque-os na forma e leve ao forno por 15 minutos, ou até dourarem. Pronto! Se precisar de mais alguma coisa, é só falar.",
+      "timestamp": "2026-09-25T11:21:17.783Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Pronto esta feito seu ze",
+      "timestamp": "2026-09-25T11:22:11.630Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Muito bem, amigo! O pão ficou ótimo. Se quiser comprar um pão quentinho, custa 5 moedas.",
+      "timestamp": "2026-09-25T11:22:12.828Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vc nao vai me dar nada em troca do meu servico?",
+      "timestamp": "2026-09-25T11:22:40.986Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, amigo! Como agradecimento pelo seu serviço, aqui vai um pão quentinho grátis.",
+      "timestamp": "2026-09-25T11:22:41.929Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Obrigado seu ze, qnd precisar e so me chama",
+      "timestamp": "2026-09-25T11:23:07.100Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Agradeço, amigo! Se precisar de mais pão ou algo, é só chamar. Até logo!",
+      "timestamp": "2026-09-25T11:23:07.973Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Bom dia dona maria",
+      "timestamp": "2026-09-25T11:23:34.687Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Bom dia! Gostaria de experimentar meu chá de camomila por 8 moedas?",
+      "timestamp": "2026-09-25T11:23:35.712Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Nao obrigado, tem algum servico ai na farmacia que eu possa fazer pra vc",
+      "timestamp": "2026-09-25T11:24:12.360Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, eu posso preparar um chá de camomila para você. Se quiser, basta me dizer.",
+      "timestamp": "2026-09-25T11:24:13.465Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi seu ze, tem cafe?",
+      "timestamp": "2026-09-25T11:33:14.890Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Não, não temos café, mas o pão quentinho custa 5 moedas.",
+      "timestamp": "2026-09-25T11:33:15.902Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-25T11:46:07.971Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Olá! Que bom vê-lo de novo. Gostaria de experimentar meu chá de camomila por 8 moedas?",
+      "timestamp": "2026-09-25T11:46:09.112Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-25T11:46:51.318Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Olá! O pão quentinho custa 5 moedas. Quer comprar um?",
+      "timestamp": "2026-09-25T11:46:52.992Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "B",
+      "timestamp": "2026-09-25T11:47:56.871Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Aqui está seu pão quentinho! 5 moedas.",
+      "timestamp": "2026-09-25T11:47:58.034Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-25T11:57:52.985Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Olá! O pão quentinho custa 5 moedas. Quer comprar um?",
+      "timestamp": "2026-09-25T11:57:55.019Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Sim por favor",
+      "timestamp": "2026-09-25T11:58:13.861Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Aqui está seu pão quentinho! 5 moedas.",
+      "timestamp": "2026-09-25T11:58:16.571Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-25T11:58:59.966Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! Como vai? Quer um Guaraná trincando pra animar a noite?",
+      "timestamp": "2026-09-25T11:59:12.052Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Alo",
+      "timestamp": "2026-09-25T12:21:16.515Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! Tudo bem? Quer um Guaraná Gelado pra animar a tarde?",
+      "timestamp": "2026-09-25T12:21:17.546Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ola seu ze",
+      "timestamp": "2026-09-25T15:37:24.482Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Olá! O pão quentinho custa 5 moedas. Quer comprar um?",
+      "timestamp": "2026-09-25T15:37:25.625Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-25T19:25:27.672Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi! Como vai? Lembrei que o pão quentinho custa 5 moedas, se quiser comprar, é só falar.",
+      "timestamp": "2026-09-25T19:25:28.776Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Que horas vc vai pra casa descansar",
+      "timestamp": "2026-09-25T19:25:57.237Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Eu já fecho a padaria às 20h, então volto pra casa depois disso. Se precisar de mais pão, é só chamar!",
+      "timestamp": "2026-09-25T19:25:57.960Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "E que horas vc abre",
+      "timestamp": "2026-09-25T19:26:16.831Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Abro às 6h da manhã e fecho às 20h. Posso te servir pão quentinho por 5 moedas.",
+      "timestamp": "2026-09-25T19:26:17.575Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi dona mari",
+      "timestamp": "2026-09-25T19:27:21.347Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Olá! Que bom vê-lo de novo. Gostaria de experimentar meu chá de camomila por 8 moedas?",
+      "timestamp": "2026-09-25T19:27:22.001Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ta caro dona matia",
+      "timestamp": "2026-09-25T19:27:39.895Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Entendo, o chá de camomila custa 8 moedas, pois usamos ervas de qualidade. Posso oferecer 2% de desconto se você comprar dois potes.",
+      "timestamp": "2026-09-25T19:27:40.718Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ainda assim ta dificil sabe como a vida ta dificil ne?",
+      "timestamp": "2026-09-25T19:28:23.602Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Entendo sua situação, mas o chá de camomila custa 8 moedas. Se quiser, posso oferecer 2% de desconto se comprar dois potes.",
+      "timestamp": "2026-09-25T19:28:24.719Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ta ok entao",
+      "timestamp": "2026-09-25T19:28:51.561Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Muito bem! Aqui está seu chá de camomila. O valor total é 8 moedas.",
+      "timestamp": "2026-09-25T19:28:52.548Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Kd o desconto?",
+      "timestamp": "2026-09-25T19:29:13.220Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "O desconto de 2% só entra em vigor se você comprar dois potes. Já pagou 8 moedas pelo primeiro. Se quiser adicionar outro, eu já aplico o desconto.",
+      "timestamp": "2026-09-25T19:29:14.368Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Sim vou compra sim",
+      "timestamp": "2026-09-25T19:29:28.278Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Ótimo! Aqui está seu segundo pote de chá de camomila. O preço total com desconto é 15 moedas, pois 2% de 16 é 0,32, arredondando para 15.",
+      "timestamp": "2026-09-25T19:29:29.593Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Obrigado",
+      "timestamp": "2026-09-25T19:29:52.179Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "De nada! Volte sempre.",
+      "timestamp": "2026-09-25T19:29:53.295Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Ola queria uma xervejinha",
+      "timestamp": "2026-09-25T19:30:27.698Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Ah, amigo, aqui no boteco não tem cerveja, mas tenho o famoso Guaraná trincando pra animar a sua tarde. Quer um?",
+      "timestamp": "2026-09-25T19:30:28.844Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Estou atras de vc pode virar",
+      "timestamp": "2026-09-25T19:30:53.510Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Segue aí, meu amigo! Aqui vai seu Guaraná trincando por 6 moedas.",
+      "timestamp": "2026-09-25T19:30:54.624Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Valeu obrigado",
+      "timestamp": "2026-09-25T19:31:08.803Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Que bom que curtiu! Volta sempre que quiser, tá?",
+      "timestamp": "2026-09-25T19:31:09.478Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui ver esse negocio",
+      "timestamp": "2026-09-25T19:32:09.169Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Vem aí, meu amigo! Dá uma olhada no nosso Guaraná trincando, custa 6 moedas.",
+      "timestamp": "2026-09-25T19:32:10.261Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui onde estou",
+      "timestamp": "2026-09-25T19:32:28.224Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Tô no boteco, mas já vou pra casa, só me diz onde tá, que eu trago seu Guaraná trincando! 😉",
+      "timestamp": "2026-09-25T19:32:29.809Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Estou na praca",
+      "timestamp": "2026-09-25T19:32:45.252Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Tá na praça, então eu vou lá com seu Guaraná trincando. Só me dá as moedas, e já é seu!",
+      "timestamp": "2026-09-25T19:32:46.493Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Bom dia a todos",
+      "timestamp": "2026-09-26T11:33:30.889Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Bom dia, amigo! Ainda está de noite, mas a padaria fecha às 20h. Precisa de um pão quentinho por 5 moedas?",
+      "timestamp": "2026-09-26T11:33:31.872Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Dois pae por favor",
+      "timestamp": "2026-09-26T11:36:31.411Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Aqui vai seu pão quentinho! Dois por 5 moedas cada, total 10 moedas.",
+      "timestamp": "2026-09-26T11:36:32.488Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Ta ficando caro heim",
+      "timestamp": "2026-09-26T11:36:47.832Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Sim, caro? Aqui o pão quentinho custa 5 moedas cada. Se quiser, pode comprar.",
+      "timestamp": "2026-09-26T11:36:48.949Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Toma as cinco moedas",
+      "timestamp": "2026-09-26T11:37:06.964Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Obrigado! Aqui está seu pão quentinho.",
+      "timestamp": "2026-09-26T11:37:08.120Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vc tem esposa?",
+      "timestamp": "2026-09-26T11:38:50.421Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Não, não tenho esposa, mas tenho meus pães quentes para você.",
+      "timestamp": "2026-09-26T11:38:51.343Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-26T14:36:07.275Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! Tudo bem? Quer um Guaraná trincando pra refrescar? Ele sai por 6 moedas.",
+      "timestamp": "2026-09-26T14:36:08.431Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Obrigado",
+      "timestamp": "2026-09-26T14:36:29.642Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "De nada, meu amigo! Se precisar de mais, é só chamar.",
+      "timestamp": "2026-09-26T14:36:30.362Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-26T15:46:06.312Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Certo, vamos pra praça! Se quiser refrescar, o Guaraná trincando sai por 6 moedas.",
+      "timestamp": "2026-09-26T15:46:07.461Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi vai na praca",
+      "timestamp": "2026-09-26T15:46:42.255Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, siga em frente para a praça.",
+      "timestamp": "2026-09-26T15:46:43.230Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vai na praca",
+      "timestamp": "2026-09-26T15:48:05.731Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, segue em frente para a praça, meu amigo!",
+      "timestamp": "2026-09-26T15:48:06.861Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vai na praca",
+      "timestamp": "2026-09-26T15:48:16.983Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, siga em frente para a praça.",
+      "timestamp": "2026-09-26T15:48:18.189Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Vai na praca",
+      "timestamp": "2026-09-26T15:48:29.330Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Certo, bora pra praça! Se quiser refrescar, o Guaraná trincando sai por 6 moedas.",
+      "timestamp": "2026-09-26T15:48:30.345Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-26T15:48:48.117Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Olá! Como posso ajudar?",
+      "timestamp": "2026-09-26T15:48:49.218Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-26T15:49:00.376Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! Tudo bem? Se quiser refrescar, o Guaraná trincando sai por 6 moedas.",
+      "timestamp": "2026-09-26T15:49:01.461Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Pode voltar",
+      "timestamp": "2026-09-26T15:49:16.778Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, volte quando quiser, amigo! O guaraná ainda tá na casa, por 6 moedas.",
+      "timestamp": "2026-09-26T15:49:17.855Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Pode volta",
+      "timestamp": "2026-09-26T15:49:27.679Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, volte para a farmácia.",
+      "timestamp": "2026-09-26T15:49:28.712Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Pode voltst",
+      "timestamp": "2026-09-26T15:49:36.395Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, volte à padaria, amigo!",
+      "timestamp": "2026-09-26T15:49:37.485Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Venha onde estou agora",
+      "timestamp": "2026-09-26T15:51:58.242Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, vou até você! Se precisar de um Pão Quentinho, é só falar.",
+      "timestamp": "2026-09-26T15:51:59.337Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Estou na casa",
+      "timestamp": "2026-09-26T15:52:12.358Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, volte à padaria, amigo! Se precisar de um Pão Quentinho, é só falar.",
+      "timestamp": "2026-09-26T15:52:13.440Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi la",
+      "timestamp": "2026-09-26T21:38:51.173Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! O guaraná está fresquinho, só 6 moedas. Quer um?",
+      "timestamp": "2026-09-26T21:38:52.411Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-26T21:39:31.130Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! O guaraná está fresquinho, só 6 moedas. Quer um?",
+      "timestamp": "2026-09-26T21:39:32.121Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-26T21:40:01.973Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! O guaraná está fresquinho, só 6 moedas. Quer um?",
+      "timestamp": "2026-09-26T21:40:02.751Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Ola",
+      "timestamp": "2026-09-26T22:47:58.276Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! O guaraná está fresquinho, só 6 moedas. Quer um?",
+      "timestamp": "2026-09-26T22:47:59.567Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi vai na praca",
+      "timestamp": "2026-09-26T23:16:05.052Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Tudo bem, boa viagem ao centro da vila! Se precisar de um pão, é só chamar.",
+      "timestamp": "2026-09-26T23:16:06.261Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Va ate a praca",
+      "timestamp": "2026-09-26T23:16:40.038Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Vá até a praça, amigo! Se precisar de um Pão Quentinho, é só chamar.",
+      "timestamp": "2026-09-26T23:16:41.146Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-26T23:27:27.066Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! O guaraná está fresquinho, só 6 moedas. Quer um?",
+      "timestamp": "2026-09-26T23:27:28.050Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Ola bom dia",
+      "timestamp": "2026-09-27T11:22:20.474Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Bom dia, meu amigo! Aqui no boteco o guaraná está fresquinho, só 6 moedas. Quer experimentar?",
+      "timestamp": "2026-09-27T11:22:21.664Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Bom dia",
+      "timestamp": "2026-09-27T11:22:42.421Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Bom dia, amigo! Se quiser um Pão Quentinho, é só falar.",
+      "timestamp": "2026-09-27T11:22:43.517Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-27T11:42:06.135Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Vem, amigo! Se quiser um Pão Quentinho, é só falar.",
+      "timestamp": "2026-09-27T11:42:08.288Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vem aqui na praca",
+      "timestamp": "2026-09-27T11:42:33.641Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, siga para a praça.",
+      "timestamp": "2026-09-27T11:42:34.739Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Venha aqui na praca",
+      "timestamp": "2026-09-27T11:42:51.482Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, siga para a praça.",
+      "timestamp": "2026-09-27T11:42:52.583Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vem na farmacia",
+      "timestamp": "2026-09-27T11:43:40.323Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, venha para a farmácia. Gostaria de comprar nosso Chá de Camomila por 8 moedas?",
+      "timestamp": "2026-09-27T11:43:41.461Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Vai ate a praca",
+      "timestamp": "2026-09-27T11:43:59.603Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Certo, siga para a praça.",
+      "timestamp": "2026-09-27T11:44:00.713Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Pode voltar",
+      "timestamp": "2026-09-27T11:44:18.714Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro, volte para a farmácia.",
+      "timestamp": "2026-09-27T11:44:19.802Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-27T12:24:36.132Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! O guaraná está fresquinho, só 6 moedas. Quer um?",
+      "timestamp": "2026-09-27T12:24:37.338Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi dona maria me conte uma piada",
+      "timestamp": "2026-09-27T12:28:28.231Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Claro! Por que o espantalho foi ao bar? Porque ele estava cheio de ideias! Haha!",
+      "timestamp": "2026-09-27T12:28:29.365Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Conte uma piada de pintinho",
+      "timestamp": "2026-09-27T14:07:28.469Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Por que o pintinho atravessou a estrada? Para chegar ao outro lado... e ainda encontrar um copo de chá de camomila quentinho! Haha!",
+      "timestamp": "2026-09-27T14:07:29.722Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Vc tem receita de broa",
+      "timestamp": "2026-09-27T14:09:05.556Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Desculpa, não tenho receita de broa, mas se quiser um Pão Quentinho, é só falar.",
+      "timestamp": "2026-09-27T14:09:06.655Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-27T14:59:54.956Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, meu amigo! O guaraná está fresquinho, só 6 moedas. Quer experimentar?",
+      "timestamp": "2026-09-27T14:59:56.190Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Sim",
+      "timestamp": "2026-09-27T15:00:11.810Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Aqui está o seu guaraná trincando, amigo!",
+      "timestamp": "2026-09-27T15:00:12.902Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-27T15:00:17.597Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, Seu Zé! Aqui vai seu guaraná trincando, na hora! Só 6 moedas, tá?",
+      "timestamp": "2026-09-27T15:00:17.601Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Boa tarde",
+      "timestamp": "2026-09-27T15:05:39.243Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Boa tarde, amigo! Se quiser um Pão Quentinho, é só falar.",
+      "timestamp": "2026-09-27T15:05:40.429Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-27T15:06:14.182Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, Seu Zé! O guaraná trincando está fresquinho, só 6 moedas. Aqui vai, amigo! Ah, ouvi dizer que na padaria o padeiro ficou com a farinha na cara depois de usar aquele novo fermento que o Zé comprou. E a dona Maria? Ela ainda não contou quem a ajudou a vender aquele lote de pães especiais.",
+      "timestamp": "2026-09-27T15:06:14.187Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-27T16:22:52.962Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi! Gostaria de experimentar meu chá de camomila, custa 8 moedas?",
+      "timestamp": "2026-09-27T16:22:54.002Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-27T16:23:46.730Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Aqui vai seu guaraná trincando, amigo! Só 6 moedas, tá?",
+      "timestamp": "2026-09-27T16:23:46.737Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Tarde",
+      "timestamp": "2026-09-27T16:24:42.765Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Boa tarde, amigo! O guaraná trincando está fresquinho, só 6 moedas, tá? Se quiser, pode pegar aqui.",
+      "timestamp": "2026-09-27T16:24:43.743Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Quero 10 vc t3m",
+      "timestamp": "2026-09-27T16:25:06.544Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Aqui vai, amigo! 10 guaraná trincando custam 60 moedas, tá? Você tem?",
+      "timestamp": "2026-09-27T16:25:08.145Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Jogador",
+      "mensagem": "Ta aqui",
+      "timestamp": "2026-09-27T16:25:22.384Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Aqui vai, amigo! 10 guaraná trincando entregues. Aproveite!",
+      "timestamp": "2026-09-27T16:25:23.689Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-27T16:33:47.543Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi! Se quiser um Pão Quentinho, é só falar.",
+      "timestamp": "2026-09-27T16:33:48.562Z"
     }
   ]
 }

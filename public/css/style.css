@@ -1,0 +1,186 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 0; overflow: hidden;
+  background-color: #020617; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #fff;
+}
+
+#webgl-container { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 1; }
+
+/* HUD Superior */
+#top-bar {
+  position: absolute; top: 15px; left: 15px; z-index: 10;
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+
+.hud-box {
+  background: rgba(15, 23, 42, 0.82); border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffb703; padding: 8px 14px; border-radius: 12px; font-weight: bold;
+  backdrop-filter: blur(10px); font-size: 0.85rem; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+#mode-indicator {
+  position: absolute; top: 60px; left: 15px; z-index: 10;
+  background: rgba(15, 23, 42, 0.85); border: 1px solid #38bdf8;
+  color: #38bdf8; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem;
+  font-weight: 600; backdrop-filter: blur(8px);
+}
+
+/* PALETA DE CORES */
+#color-palette {
+  position: absolute; top: 100px; left: 15px; z-index: 10;
+  display: none; gap: 8px; background: rgba(15, 23, 42, 0.9);
+  padding: 8px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px); align-items: center; flex-wrap: wrap;
+}
+
+.color-btn {
+  width: 28px; height: 28px; border-radius: 6px; border: 2px solid transparent;
+  cursor: pointer; transition: transform 0.1s, border-color 0.1s;
+}
+.color-btn.selected { border-color: #fff; transform: scale(1.15); box-shadow: 0 0 8px rgba(255,255,255,0.8); }
+
+.build-tool-btn {
+  background: #334155; border: 1px solid rgba(255,255,255,0.3); color: #fff;
+  padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; font-weight: bold;
+}
+.build-tool-btn.active-erase { background: #e11d48; border-color: #f43f5e; }
+
+#action-tools {
+  position: absolute; top: 15px; right: 15px; z-index: 10;
+  display: flex; gap: 8px;
+}
+
+.tool-btn {
+  background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; padding: 8px 12px; border-radius: 10px; cursor: pointer;
+  font-size: 0.85rem; font-weight: 600; backdrop-filter: blur(8px); transition: all 0.2s;
+}
+.tool-btn:hover { background: rgba(30, 41, 59, 0.95); border-color: #ffb703; }
+
+/* JOYSTICK ANALÓGICO */
+#joystick-zone {
+  position: absolute; bottom: 25px; left: 25px; z-index: 10;
+  width: 120px; height: 120px;
+  background: rgba(255, 255, 255, 0.08); border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%; backdrop-filter: blur(4px); touch-action: none; user-select: none;
+}
+
+#joystick-knob {
+  position: absolute; top: 35px; left: 35px;
+  width: 50px; height: 50px;
+  background: rgba(56, 189, 248, 0.6); border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%; box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); pointer-events: none;
+}
+
+/* CHAT RETRÁTIL */
+#chat-wrapper {
+  position: absolute; bottom: 20px; right: 15px; z-index: 10;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#chat-wrapper.recolhido #chat-panel { display: none; }
+
+#toggle-chat-btn {
+  background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255,255,255,0.25);
+  color: #ffb703; padding: 6px 14px; border-radius: 20px; cursor: pointer;
+  font-size: 0.8rem; font-weight: bold; backdrop-filter: blur(10px);
+}
+
+#chat-panel {
+  width: 340px; max-width: calc(100vw - 30px);
+  background: rgba(15, 23, 42, 0.88); padding: 12px; border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.6); backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.status-conexao {
+  font-size: 0.75rem; font-weight: bold; padding: 4px 8px; border-radius: 6px;
+  margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;
+}
+.status-presencial { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e; }
+.status-ligacao { background: rgba(234, 179, 8, 0.2); color: #fde047; border: 1px solid #eab308; }
+
+.npc-select-box { margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
+select, .action-btn {
+  padding: 8px 10px; border-radius: 8px; background: #1e293b; color: #fff;
+  border: 1px solid rgba(255,255,255,0.2); font-size: 0.85rem; outline: none; flex: 1;
+}
+.action-btn { background: #ffb703; color: #000; font-weight: bold; cursor: pointer; border: none; flex: initial; }
+
+#chatLog {
+  height: 120px; overflow-y: auto; border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px; background: rgba(2, 6, 23, 0.65); border-radius: 10px;
+  margin-bottom: 8px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;
+}
+
+.msg { padding: 6px 10px; border-radius: 8px; font-size: 0.85rem; line-height: 1.3; }
+.msg.voce { background: #1e3a8a; text-align: right; align-self: flex-end; max-width: 85%; }
+.msg.seu_ze { background: #851e1e; align-self: flex-start; max-width: 85%; }
+.msg.dona_maria { background: #831843; align-self: flex-start; max-width: 85%; }
+.msg.tiao_bar { background: #78350f; align-self: flex-start; max-width: 85%; }
+
+.input-box { display: flex; gap: 6px; }
+input[type="text"] {
+  flex: 1; padding: 10px; border: none; border-radius: 8px;
+  background: #1e293b; color: #fff; outline: none; font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+button.send-btn { padding: 10px 14px; border: none; border-radius: 8px; background: #e11d48; color: #fff; font-weight: bold; cursor: pointer; }
+
+#crosshair {
+  position: absolute; top: 50%; left: 50%; width: 10px; height: 10px;
+  margin-top: -5px; margin-left: -5px; pointer-events: none; z-index: 5;
+  display: none; border: 2px solid rgba(255,255,255,0.8); border-radius: 50%;
+}
+/* BOTÃO DE PULO (MOBILE) */
+#jump-btn {
+  position: absolute; bottom: 35px; left: 160px; z-index: 10;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(56, 189, 248, 0.8); border: 2px solid rgba(255, 255, 255, 0.8);
+  color: #fff; font-size: 1.2rem; font-weight: bold; cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center; user-select: none;
+}
+#jump-btn:active { transform: scale(0.92); background: #0284c7; }
+
+/* MODAL / MENU DE CUSTOMIZAÇÃO DE SKIN */
+#skin-modal {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(15, 23, 42, 0.95); border: 2px solid #38bdf8;
+  padding: 20px; border-radius: 16px; z-index: 20; display: none;
+  flex-direction: column; gap: 12px; width: 300px; backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+#skin-modal h3 { margin: 0; text-align: center; color: #ffb703; font-size: 1.1rem; }
+.skin-option { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+.skin-option input[type="color"] { border: none; width: 35px; height: 35px; border-radius: 6px; cursor: pointer; background: transparent; }
+.close-modal-btn { background: #e11d48; color: #fff; border: none; padding: 8px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 5px; }
+
+/* BOTÃO E MODAL DE MISSÕES */
+#missions-modal {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(15, 23, 42, 0.95); border: 2px solid #f59e0b;
+  padding: 20px; border-radius: 16px; z-index: 20; display: none;
+  flex-direction: column; gap: 12px; width: 340px; max-width: 90vw;
+  backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+#missions-modal h3 { margin: 0; text-align: center; color: #f59e0b; font-size: 1.1rem; }
+.mission-card {
+  background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(255,255,255,0.15);
+  padding: 10px 12px; border-radius: 10px; display: flex; flex-direction: column; gap: 6px;
+}
+.mission-title { font-weight: bold; color: #38bdf8; font-size: 0.9rem; }
+.mission-desc { font-size: 0.8rem; color: #cbd5e1; }
+.mission-reward { font-size: 0.8rem; font-weight: bold; color: #facc15; }
+.accept-mission-btn {
+  background: #10b981; color: #fff; border: none; padding: 6px 10px;
+  border-radius: 6px; font-weight: bold; cursor: pointer; align-self: flex-end;
+}
+.accept-mission-btn:disabled { background: #64748b; cursor: not-allowed; }
+#active-mission-hud {
+  position: absolute; top: 100px; right: 15px; z-index: 10;
+  background: rgba(15, 23, 42, 0.85); border: 1px solid #f59e0b;
+  color: #f59e0b; padding: 8px 12px; border-radius: 10px; font-size: 0.8rem;
+  font-weight: 600; backdrop-filter: blur(8px); display: none;
+}
