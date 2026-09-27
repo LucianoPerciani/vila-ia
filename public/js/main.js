@@ -8,7 +8,7 @@ let modoConstrucao = false;
 let modoApagarAtivo = false;
 let chatVisivel = true;
 let corBlocoAtual = 0x38bdf8;
-let velocidadeBaseJogador = 0.18;
+let velocidadeBaseJogador = 0.25;
 
 // --- SISTEMA DE VEÍCULO ---
 let noVeiculo = false;
@@ -202,7 +202,7 @@ scene.background = corDia.clone();
 scene.fog = new THREE.FogExp2(0x38bdf8, 0.002);
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 2500);
-camera.position.set(-30, 28, 57);
+camera.position.set(-30, 35, 65);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -258,25 +258,152 @@ function criarPosteLuz(x, z) {
   registrarObjetoSolido(x - 0.4, x + 0.4, z - 0.4, z + 0.4);
 }
 
-for (let x = -160; x <= 160; x += 40) {
-  criarPosteLuz(x, -9);
-  criarPosteLuz(x, 9);
-}
-
-// TERRENO
-const floorGeo = new THREE.PlaneGeometry(450, 450);
+// TERRENO PRINCIPAL EXPANDIDO
+const floorGeo = new THREE.PlaneGeometry(600, 600);
 const floorMat = new THREE.MeshStandardMaterial({ color: 0x48bb78, roughness: 0.9 });
 const floor = new THREE.Mesh(floorGeo, floorMat);
 floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
 
-// AVENIDA PRINCIPAL
+// ENCRUZINHADA E REDE DE RUAS (MALHA URBANA)
 const ruaMat = new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.6 });
-const avenidaPrincipal = new THREE.Mesh(new THREE.PlaneGeometry(400, 14), ruaMat);
-avenidaPrincipal.rotation.x = -Math.PI / 2; avenidaPrincipal.position.set(0, 0.02, 0);
-avenidaPrincipal.receiveShadow = true; scene.add(avenidaPrincipal);
+const calcadaMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8, roughness: 0.8 });
 
-const faixaCentral = new THREE.Mesh(new THREE.PlaneGeometry(400, 0.4), new THREE.MeshBasicMaterial({ color: 0xfacc15 }));
+// Avenida Principal (Horizontal)
+const avPrincipal = new THREE.Mesh(new THREE.PlaneGeometry(500, 14), ruaMat);
+avPrincipal.rotation.x = -Math.PI / 2; avPrincipal.position.set(0, 0.02, 0); avPrincipal.receiveShadow = true; scene.add(avPrincipal);
+
+const faixaCentral = new THREE.Mesh(new THREE.PlaneGeometry(500, 0.4), new THREE.MeshBasicMaterial({ color: 0xfacc15 }));
 faixaCentral.rotation.x = -Math.PI / 2; faixaCentral.position.set(0, 0.03, 0); scene.add(faixaCentral);
+
+// Rua Transversal 1 (Cruzamento Principal - Vertical em X=0)
+const ruaVertical1 = new THREE.Mesh(new THREE.PlaneGeometry(14, 400), ruaMat);
+ruaVertical1.rotation.x = -Math.PI / 2; ruaVertical1.position.set(0, 0.02, 0); ruaVertical1.receiveShadow = true; scene.add(ruaVertical1);
+
+// Rua Transversal 2 (Cruzamento Leste em X=100)
+const ruaVertical2 = new THREE.Mesh(new THREE.PlaneGeometry(14, 400), ruaMat);
+ruaVertical2.rotation.x = -Math.PI / 2; ruaVertical2.position.set(100, 0.02, 0); ruaVertical2.receiveShadow = true; scene.add(ruaVertical2);
+
+// Rua Transversal 3 (Cruzamento Oeste em X=-100)
+const ruaVertical3 = new THREE.Mesh(new THREE.PlaneGeometry(14, 400), ruaMat);
+ruaVertical3.rotation.x = -Math.PI / 2; ruaVertical3.position.set(-100, 0.02, 0); ruaVertical3.receiveShadow = true; scene.add(ruaVertical3);
+
+// POSTES DE ILUMINAÇÃO NAS RUAS E CRUZAMENTOS
+for (let x = -200; x <= 200; x += 30) {
+  criarPosteLuz(x, -9);
+  criarPosteLuz(x, 9);
+}
+for (let z = -150; z <= 150; z += 40) {
+  if (Math.abs(z) > 15) {
+    criarPosteLuz(-9, z);
+    criarPosteLuz(9, z);
+    criarPosteLuz(91, z);
+    criarPosteLuz(-109, z);
+  }
+}
+
+// LAGO COM ÁGUA ANIMADA E PONTE DE MADEIRA
+let lagoMesh = null;
+function criarLagoComPonte(x, z) {
+  const g = new THREE.Group();
+  
+  // Borda de Pedra do Lago
+  const bordaGeo = new THREE.RingGeometry(18, 22, 32);
+  const bordaMat = new THREE.MeshStandardMaterial({ color: 0x64748b, roughness: 0.9, side: THREE.DoubleSide });
+  const borda = new THREE.Mesh(bordaGeo, bordaMat);
+  borda.rotation.x = -Math.PI / 2; borda.position.y = 0.05; g.add(borda);
+
+  // Espelho d'Água
+  const aguaGeo = new THREE.CircleGeometry(19, 32);
+  const aguaMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.1, metalness: 0.8, transparent: true, opacity: 0.8 });
+  lagoMesh = new THREE.Mesh(aguaGeo, aguaMat);
+  lagoMesh.rotation.x = -Math.PI / 2; lagoMesh.position.y = 0.08; g.add(lagoMesh);
+
+  // Ponte de Madeira Cruzando o Lago
+  const ponteMat = new THREE.MeshStandardMaterial({ color: 0x78350f, roughness: 0.8 });
+  const ponteChao = new THREE.Mesh(new THREE.BoxGeometry(6, 0.5, 42), ponteMat);
+  ponteChao.position.set(0, 0.3, 0); ponteChao.receiveShadow = true; g.add(ponteChao);
+
+  const corrimaoEsq = new THREE.Mesh(new THREE.BoxGeometry(0.3, 1.2, 42), ponteMat);
+  corrimaoEsq.position.set(-2.8, 1.0, 0); g.add(corrimaoEsq);
+  const corrimaoDir = new THREE.Mesh(new THREE.BoxGeometry(0.3, 1.2, 42), ponteMat);
+  corrimaoDir.position.set(2.8, 1.0, 0); g.add(corrimaoDir);
+
+  g.position.set(x, 0, z);
+  scene.add(g);
+
+  // Colisão nas laterais do lago (fora da ponte)
+  registrarObjetoSolido(x - 22, x - 3, z - 22, z + 22);
+  registrarObjetoSolido(x + 3, x + 22, z - 22, z + 22);
+}
+
+criarLagoComPonte(-140, 60);
+
+// PRAÇA CENTRAL DETALHADA COM CHAFARIZ
+function criarPracaCentral(x, z) {
+  const g = new THREE.Group();
+
+  // Piso da Praça
+  const piso = new THREE.Mesh(new THREE.BoxGeometry(50, 0.2, 50), new THREE.MeshStandardMaterial({ color: 0xc2410c, roughness: 0.8 }));
+  piso.position.y = 0.1; piso.receiveShadow = true; g.add(piso);
+
+  // Chafariz Central Voxel
+  const baseChafariz = new THREE.Mesh(new THREE.BoxGeometry(10, 1.2, 10), new THREE.MeshStandardMaterial({ color: 0x475569 }));
+  baseChafariz.position.y = 0.8; g.add(baseChafariz);
+
+  const pilarChafariz = new THREE.Mesh(new THREE.BoxGeometry(3, 3.5, 3), new THREE.MeshStandardMaterial({ color: 0x334155 }));
+  pilarChafariz.position.y = 2.5; g.add(pilarChafariz);
+
+  const aguaTopo = new THREE.Mesh(new THREE.BoxGeometry(4.5, 0.4, 4.5), new THREE.MeshBasicMaterial({ color: 0x38bdf8 }));
+  aguaTopo.position.y = 4.4; g.add(aguaTopo);
+
+  // Bancos de Madeira Voxel na Praça
+  function criarBancoPraca(bx, bz, rotY) {
+    const bg = new THREE.Group();
+    const matM = new THREE.MeshStandardMaterial({ color: 0x451a03 });
+    const assento = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.3, 1.2), matM); assento.position.y = 0.7; bg.add(assento);
+    const encosto = new THREE.Mesh(new THREE.BoxGeometry(3.5, 1.2, 0.3), matM); encosto.position.set(0, 1.3, -0.5); bg.add(encosto);
+    bg.position.set(bx, 0, bz); bg.rotation.y = rotY; g.add(bg);
+  }
+
+  criarBancoPraca(0, 12, 0);
+  criarBancoPraca(0, -12, Math.PI);
+  criarBancoPraca(12, 0, -Math.PI / 2);
+  criarBancoPraca(-12, 0, Math.PI / 2);
+
+  g.position.set(x, 0, z); scene.add(g);
+  registrarObjetoSolido(x - 5, x + 5, z - 5, z + 5);
+}
+
+criarPracaCentral(0, -90);
+
+// CASAS DECORATIVAS PARA ENCHER OS BAIRROS
+function criarCasaDecorativa(x, z, corParede, corTelhado, rotY = 0) {
+  const g = new THREE.Group();
+  const matP = new THREE.MeshStandardMaterial({ color: corParede, roughness: 0.6 });
+  const matT = new THREE.MeshStandardMaterial({ color: corTelhado, roughness: 0.4 });
+  const matPorta = new THREE.MeshStandardMaterial({ color: 0x451a03 });
+  const matJanela = new THREE.MeshBasicMaterial({ color: 0xfef08a });
+
+  const corpo = new THREE.Mesh(new THREE.BoxGeometry(10, 5, 10), matP); corpo.position.y = 2.5; g.add(corpo);
+  const telhado = new THREE.Mesh(new THREE.ConeGeometry(8, 4, 4), matT); telhado.position.y = 7; telhado.rotation.y = Math.PI / 4; g.add(telhado);
+  const porta = new THREE.Mesh(new THREE.BoxGeometry(2, 3.5, 0.3), matPorta); porta.position.set(0, 1.75, 5.1); g.add(porta);
+  
+  const j1 = new THREE.Mesh(new THREE.BoxGeometry(1.8, 1.8, 0.2), matJanela); j1.position.set(-3, 3, 5.1); g.add(j1);
+  const j2 = new THREE.Mesh(new THREE.BoxGeometry(1.8, 1.8, 0.2), matJanela); j2.position.set(3, 3, 5.1); g.add(j2);
+
+  g.position.set(x, 0, z); g.rotation.y = rotY; scene.add(g);
+  registrarObjetoSolido(x - 5.5, x + 5.5, z - 5.5, z + 5.5);
+}
+
+// Bairro Leste
+criarCasaDecorativa(130, 30, 0x16a34a, 0x7f1d1d, Math.PI);
+criarCasaDecorativa(130, -30, 0x0284c7, 0xb91c1c, 0);
+criarCasaDecorativa(160, 30, 0xd97706, 0x1e293b, Math.PI);
+criarCasaDecorativa(160, -30, 0x9333ea, 0x451a03, 0);
+
+// Bairro Oeste
+criarCasaDecorativa(-130, -30, 0xe11d48, 0x1e1b4b, 0);
+criarCasaDecorativa(-160, -30, 0x0d9488, 0x78350f, 0);
 
 function criarPlacaIdentificacao(x, z, corCaixa, corPlaca, eVertical = false) {
   const g = new THREE.Group();
@@ -309,7 +436,8 @@ function criarArvoreVoxel(x, z) {
 
 [
   [-140, -45], [-70, -45], [70, -45], [140, -45],
-  [-140, 45], [-70, 45], [70, 45], [140, 45]
+  [-140, 45], [-70, 45], [70, 45], [140, 45],
+  [40, -110], [-40, -110], [40, -70], [-40, -70]
 ].forEach(p => criarArvoreVoxel(p[0], p[1]));
 
 const pontos3D = {
@@ -319,7 +447,7 @@ const pontos3D = {
   boteco: { x: -80, z: 22 },
   minhaCasa: { x: -30, z: 25 },
   casaRoxa: { x: 60, z: 22 },
-  praca: { x: 0, z: 22 }
+  praca: { x: 0, z: -90 }
 };
 
 function criarPadariaDetalhada(x, z) {
@@ -527,14 +655,12 @@ function criarCarroVoxel(x, z) {
   const teto = new THREE.Mesh(new THREE.BoxGeometry(2.9, 0.2, 3.1), matCarro);
   teto.position.set(0, 2.45, -0.2); g.add(teto);
 
-  // RODAS
   const geoRoda = new THREE.BoxGeometry(0.6, 0.8, 0.8);
   const r1 = new THREE.Mesh(geoRoda, matRoda); r1.position.set(-1.6, 0.4, 1.8); g.add(r1);
   const r2 = new THREE.Mesh(geoRoda, matRoda); r2.position.set(1.6, 0.4, 1.8); g.add(r2);
   const r3 = new THREE.Mesh(geoRoda, matRoda); r3.position.set(-1.6, 0.4, -1.8); g.add(r3);
   const r4 = new THREE.Mesh(geoRoda, matRoda); r4.position.set(1.6, 0.4, -1.8); g.add(r4);
 
-  // FARÓIS
   const farolEsq = new THREE.SpotLight(0xffffff, 0, 40, Math.PI / 6, 0.5);
   farolEsq.position.set(-1.0, 1.0, 2.8);
   farolEsq.target.position.set(-1.0, 0, 10);
@@ -561,7 +687,6 @@ criarCasaRoxaMorador(pontos3D.casaRoxa.x, pontos3D.casaRoxa.z);
 criarMinhaCasa(pontos3D.minhaCasa.x, pontos3D.minhaCasa.z);
 criarIgrejaVoxel(pontos3D.igreja.x, pontos3D.igreja.z);
 
-// BALÕES DE FALA 3D NOS NPCS
 function criarBalaoFala3D(texto) {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
@@ -587,7 +712,6 @@ function criarBalaoFala3D(texto) {
   return sprite;
 }
 
-// PERSONAGENS HD
 function criarPersonagemArticuladoHD(corCamisa, corCalca, acessorio) {
   const g = new THREE.Group();
   const matPele = new THREE.MeshStandardMaterial({ color: 0xfcb37c, roughness: 0.6 });
@@ -624,7 +748,6 @@ function criarPersonagemArticuladoHD(corCamisa, corCalca, acessorio) {
   caixaEntrega.visible = false;
   g.add(caixaEntrega);
 
-  // LANTERNA ANEXADA
   const lanternaMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.15, 0.6), new THREE.MeshStandardMaterial({ color: 0xfacc15 }));
   lanternaMesh.rotation.x = Math.PI / 2;
   lanternaMesh.position.set(0, -0.4, 0.3);
@@ -658,7 +781,6 @@ playerGroup.position.set(-30, 0, 15); scene.add(playerGroup);
 controls.target.set(playerGroup.position.x, playerGroup.position.y + 2, playerGroup.position.z);
 controls.update();
 
-// SISTEMA DE ENTRAR/SAIR DO VEÍCULO
 function toggleEntrarVeiculo() {
   if (!carroGroup) return;
   const dist = playerGroup.position.distanceTo(carroGroup.position);
@@ -675,7 +797,6 @@ function toggleEntrarVeiculo() {
   }
 }
 
-// SISTEMA DE LOJA
 function abrirMenuLoja() { const el = document.getElementById('shop-modal'); if (el) el.style.display = 'block'; }
 function fecharMenuLoja() { const el = document.getElementById('shop-modal'); if (el) el.style.display = 'none'; }
 
@@ -690,7 +811,7 @@ function comprarItem(item, preco) {
       playerGroup.userData.lanternaMesh.visible = true;
       alert('Lanterna adquirida! Ela ligará automaticamente à noite.');
     } else if (item === 'energetico') {
-      velocidadeBaseJogador = 0.28;
+      velocidadeBaseJogador = 0.40;
       alert('Energético consumido! Sua velocidade aumentou!');
     }
     fecharMenuLoja();
@@ -699,7 +820,6 @@ function comprarItem(item, preco) {
   }
 }
 
-// MENUS E SKINS
 function abrirMenuSkin() { const el = document.getElementById('skin-modal'); if (el) el.style.display = 'flex'; }
 function fecharMenuSkin() { const el = document.getElementById('skin-modal'); if (el) el.style.display = 'none'; }
 function abrirMenuMissoes() { const el = document.getElementById('missions-modal'); if (el) el.style.display = 'flex'; }
@@ -718,7 +838,6 @@ function atualizarSkinJogador() {
   }
 }
 
-// MISSÕES
 function aceitarMissao(tipo) {
   if (missaoAtiva) { alert("Você já tem uma missão em andamento!"); return; }
 
@@ -780,7 +899,6 @@ function atualizarRotinaAutomaticaNpcs(hora) {
   }
 }
 
-// CONTROLES
 let moveInput = { x: 0, z: 0 };
 const keysPressed = {};
 
@@ -853,7 +971,6 @@ function processarMovimentoTeclado() {
   }
 }
 
-// CONSTRUÇÃO E SAVES
 const raycaster = new THREE.Raycaster(); const mouse = new THREE.Vector2();
 const blocosConstruidos = []; const dadosBlocosSalvos = [];
 
@@ -969,7 +1086,6 @@ function checarAproximacaoNpcs() {
     }
   }
 
-  // BOTAO DO CARRO EXIBIDO SE ESTIVER PERTO
   const btnCar = document.getElementById('car-btn');
   if (btnCar) {
     const distCarro = playerGroup.position.distanceTo(carroGroup.position);
@@ -980,7 +1096,7 @@ function checarAproximacaoNpcs() {
 // CLIMA
 const qtdChuva = 2000; const geoChuva = new THREE.BufferGeometry(); const posChuva = new Float32Array(qtdChuva * 3);
 for (let i = 0; i < qtdChuva * 3; i += 3) {
-  posChuva[i] = (Math.random() - 0.5) * 320; posChuva[i+1] = Math.random() * 60; posChuva[i+2] = (Math.random() - 0.5) * 320;
+  posChuva[i] = (Math.random() - 0.5) * 450; posChuva[i+1] = Math.random() * 60; posChuva[i+2] = (Math.random() - 0.5) * 450;
 }
 geoChuva.setAttribute('position', new THREE.BufferAttribute(posChuva, 3));
 const sistemaChuva = new THREE.Points(geoChuva, new THREE.PointsMaterial({ color: 0x38bdf8, size: 0.25, transparent: true, opacity: 0.7 }));
@@ -992,9 +1108,9 @@ function toggleWeather() {
   if (c) c.innerText = chovendo ? '🌧️ Chovendo' : '☀️ Ensolarado';
 }
 
-const qtdVagalumes = 120; const geoVagalumes = new THREE.BufferGeometry(); const posVagalumes = new Float32Array(qtdVagalumes * 3);
+const qtdVagalumes = 180; const geoVagalumes = new THREE.BufferGeometry(); const posVagalumes = new Float32Array(qtdVagalumes * 3);
 for (let i = 0; i < qtdVagalumes * 3; i += 3) {
-  posVagalumes[i] = (Math.random() - 0.5) * 280; posVagalumes[i+1] = Math.random() * 8 + 1; posVagalumes[i+2] = (Math.random() - 0.5) * 280;
+  posVagalumes[i] = (Math.random() - 0.5) * 400; posVagalumes[i+1] = Math.random() * 8 + 1; posVagalumes[i+2] = (Math.random() - 0.5) * 400;
 }
 geoVagalumes.setAttribute('position', new THREE.BufferAttribute(posVagalumes, 3));
 const sistemaVagalumes = new THREE.Points(geoVagalumes, new THREE.PointsMaterial({ color: 0xfef08a, size: 0.6, transparent: true, opacity: 0.9 }));
@@ -1020,16 +1136,20 @@ function animate() {
 
   processarMovimentoTeclado();
 
+  // ANIMAÇÃO ONDULATÓRIA DA ÁGUA DO LAGO
+  if (lagoMesh) {
+    lagoMesh.rotation.z = Math.sin(tempoGlobal * 0.5) * 0.05;
+  }
+
   if (noVeiculo) {
-    // FÍSICA E PILOTAGEM DO CARRO
     if (moveInput.z !== 0) {
-      velocidadeCarro = THREE.MathUtils.lerp(velocidadeCarro, -moveInput.z * 0.45, 0.05);
+      velocidadeCarro = THREE.MathUtils.lerp(velocidadeCarro, -moveInput.z * 0.55, 0.05);
     } else {
       velocidadeCarro = THREE.MathUtils.lerp(velocidadeCarro, 0, 0.08);
     }
 
     if (Math.abs(velocidadeCarro) > 0.02) {
-      anguloDirecaoCarro -= moveInput.x * 0.04 * Math.sign(velocidadeCarro);
+      anguloDirecaoCarro -= moveInput.x * 0.05 * Math.sign(velocidadeCarro);
     }
 
     carroGroup.rotation.y = anguloDirecaoCarro;
@@ -1042,7 +1162,6 @@ function animate() {
     controls.target.copy(carroGroup.position);
 
   } else {
-    // MOVIMENTO A PÉ
     if (emPulo) {
       playerGroup.position.y += velocidadeY;
       velocidadeY += gravidade;

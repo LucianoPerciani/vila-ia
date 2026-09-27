@@ -2075,6 +2075,42 @@
       "autor": "Seu Zé",
       "mensagem": "Oi! Se quiser um Pão Quentinho, é só falar.",
       "timestamp": "2026-09-27T16:33:48.562Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-27T22:58:26.602Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Aqui vai, amigo! 1 guaraná trincando custa 6 moedas, tá?",
+      "timestamp": "2026-09-27T22:58:26.619Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, estou bem, e você? E aquela piadinha boa, tem alguma ai?",
+      "timestamp": "2026-09-27T23:13:22.868Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, Seu Zé! Tudo bem por aqui, mas o clima está quente e o guaraná está sempre a mil. Já ouvi dizer que você quer uma piadinha? Então, por que o tomate ficou vermelho? Porque viu o molho! Haha! Se quiser refrescar, tem o guaraná trincando por 6 moedas, tá?",
+      "timestamp": "2026-09-27T23:13:22.875Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, estou bem, e você? E aquela piadinha boa, tem alguma ai?",
+      "timestamp": "2026-09-27T23:13:52.657Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Oi, Seu Zé! Tudo bem aqui no boteco, amigo! Já ouvi aquela piadinha: Por que o tomate ficou vermelho? Porque viu o molho! Haha! E se quiser refrescar, tem o guaraná trincando por 6 moedas, tá?",
+      "timestamp": "2026-09-27T23:13:52.675Z"
     }
   ]
 }
