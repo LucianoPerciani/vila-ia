@@ -1,4 +1,3 @@
-
 const socket = (typeof io !== "undefined") ? io() : { on:()=>{}, emit:()=>{} };
 
 let moedas = 50;
@@ -116,19 +115,6 @@ window.selecionarCor = function(corHex, btnEl) {
   if (btnEl) btnEl.classList.add("selected");
 };
 
-window.toggleEntrarVeiculo = function() {
-  if (!carroGroup) return;
-  const dist = playerGroup.position.distanceTo(carroGroup.position);
-  if (!noVeiculo && dist <= 6) {
-    noVeiculo = true; playerGroup.visible = false;
-    document.getElementById("car-btn").innerText = "🚶‍♂️";
-  } else if (noVeiculo) {
-    noVeiculo = false; playerGroup.visible = true;
-    playerGroup.position.set(carroGroup.position.x - 3, 0, carroGroup.position.z);
-    document.getElementById("car-btn").innerText = "🚗";
-  }
-};
-
 window.enviarMensagem = function() {
   const input = document.getElementById("inputMensagem");
   const npcSelect = document.getElementById("selectNpc");
@@ -136,7 +122,11 @@ window.enviarMensagem = function() {
   const msg = input.value.trim();
   if (!msg) return;
   adicionarMensagemChat("voce", msg);
-  socket.emit("falar_com_npc", { npcId: npcSelect.value, mensagem: msg, contextoMundo: { horario: horaSimulada > 18 || horaSimulada < 6 ? "Noite" : "Dia" } });
+  socket.emit("falar_com_npc", { 
+    npcId: npcSelect.value, 
+    mensagem: msg, 
+    contextoMundo: { horario: horaSimulada > 18 || horaSimulada < 6 ? "Noite" : "Dia" } 
+  });
   input.value = "";
 };
 
@@ -144,21 +134,28 @@ window.iniciarReconhecimentoVoz = function() {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SpeechRecognition) { alert("Navegador sem suporte a voz."); return; }
   const recognition = new SpeechRecognition();
-  recognition.lang = "pt-BR"; recognition.interimResults = false;
+  recognition.lang = "pt-BR"; 
+  recognition.interimResults = false;
   const btnMic = document.getElementById("btn-microfone");
   const txtStatus = document.getElementById("statusVozTexto");
   if (btnMic) { btnMic.style.background = "#e11d48"; btnMic.innerText = "🔴 Ouvindo..."; }
   if (txtStatus) txtStatus.innerText = "Escutando...";
   recognition.start();
+  
   recognition.onresult = (event) => {
     const textoFalado = event.results[0][0].transcript;
     if (txtStatus) txtStatus.innerText = "Você falou: " + textoFalado;
     const npcSelect = document.getElementById("selectNpc");
     if (npcSelect) {
       adicionarMensagemChat("voce", textoFalado);
-      socket.emit("falar_com_npc", { npcId: npcSelect.value, mensagem: textoFalado, contextoMundo: { horario: horaSimulada > 18 || horaSimulada < 6 ? "Noite" : "Dia" } });
+      socket.emit("falar_com_npc", { 
+        npcId: npcSelect.value, 
+        mensagem: textoFalado, 
+        contextoMundo: { horario: horaSimulada > 18 || horaSimulada < 6 ? "Noite" : "Dia" } 
+      });
     }
   };
+  
   recognition.onerror = () => restaurarBotaoMic();
   recognition.onend = () => restaurarBotaoMic();
 };
@@ -191,6 +188,19 @@ window.toggleChatPanel = function() {
   if (wrapper && btn) {
     if (chatVisivel) { wrapper.classList.remove("recolhido"); btn.innerText = "✖ Ocultar"; }
     else { wrapper.classList.add("recolhido"); btn.innerText = "💬 Chat"; }
+  }
+};
+
+window.toggleEntrarVeiculo = function() {
+  if (!carroGroup) return;
+  const dist = playerGroup.position.distanceTo(carroGroup.position);
+  if (!noVeiculo && dist <= 6) {
+    noVeiculo = true; playerGroup.visible = false;
+    document.getElementById("car-btn").innerText = "🚶‍♂️";
+  } else if (noVeiculo) {
+    noVeiculo = false; playerGroup.visible = true;
+    playerGroup.position.set(carroGroup.position.x - 3, 0, carroGroup.position.z);
+    document.getElementById("car-btn").innerText = "🚗";
   }
 };
 
@@ -586,8 +596,8 @@ function criarFarmaciaDetalhada(x, z) {
   const coresRemedios = [0xef4444, 0x3b82f6, 0x10b981, 0xf59e0b];
   for (let rx = -5; rx <= 5; rx += 1.8) {
     for (let ry = 1.2; ry <= 3.8; ry += 1.2) {
-      const cor = coresRemedios[Math.floor(Math.random() * coresRemedios.length)];
-      const cx = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.5, 0.5), new THREE.MeshStandardMaterial({ color }));
+      const corItem = coresRemedios[Math.floor(Math.random() * coresRemedios.length)];
+      const cx = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.5, 0.5), new THREE.MeshStandardMaterial({ color: corItem }));
       cx.position.set(rx, ry, -5.2); g.add(cx);
     }
   }
@@ -1108,7 +1118,8 @@ function adicionarMensagemChat(npcId, texto) {
   if (npcId === "seu_ze") { nome = "Seu Zé"; cssClass = "seu_ze"; }
   else if (npcId === "dona_maria") { nome = "Dona Maria"; cssClass = "dona_maria"; }
   else if (npcId === "tiao_bar") { nome = "Tião do Bar"; cssClass = "tiao_bar"; }
-  log.innerHTML += "<div class="msg " + cssClass + ""><strong>" + nome + ":</strong> " + texto + "</div>";
+  
+  log.innerHTML += '<div class="msg ' + cssClass + '"><strong>' + nome + ':</strong> ' + texto + '</div>';
   log.scrollTop = log.scrollHeight;
 }
 

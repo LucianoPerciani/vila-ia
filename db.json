@@ -2255,6 +2255,18 @@
       "autor": "Seu Zé",
       "mensagem": "Oi, Luciano! Tudo bem por aqui. Como posso ajudar hoje?",
       "timestamp": "2026-09-28T23:11:55.272Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Olá alguém tá me escutando",
+      "timestamp": "2026-09-29T00:38:03.608Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi, Luciano! Estou ouvindo. Precisa de algum pão ou outra coisa?",
+      "timestamp": "2026-09-29T00:38:04.702Z"
     }
   ]
 }
