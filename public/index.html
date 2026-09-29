@@ -1,138 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Vila 3D - Expansion Edition</title>
-  
-  <link rel="stylesheet" href="css/style.css">
-  
-  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Vila Voxel 3D</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    body { overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #fff; }
+    #webgl-container { width: 100vw; height: 100vh; display: block; }
+    #top-bar { position: absolute; top: 10px; left: 10px; right: 10px; display: flex; gap: 8px; justify-content: space-between; pointer-events: none; z-index: 10; }
+    .hud-box { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); font-size: 13px; font-weight: bold; pointer-events: auto; }
+    #action-tools { position: absolute; top: 60px; right: 10px; display: flex; flex-direction: column; gap: 8px; z-index: 10; }
+    .tool-btn { background: rgba(15, 23, 42, 0.85); border: 1px solid #38bdf8; color: white; padding: 10px; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    #joystick-zone { position: absolute; bottom: 30px; left: 30px; width: 110px; height: 110px; background: rgba(255, 255, 255, 0.15); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 50%; touch-action: none; z-index: 10; }
+    #joystick-knob { position: absolute; top: 35px; left: 35px; width: 40px; height: 40px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 10px #38bdf8; }
+    #crosshair { position: absolute; top: 50%; left: 50%; width: 12px; height: 12px; border: 2px solid white; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; display: none; z-index: 5; }
+    
+    #chat-wrapper { position: absolute; bottom: 20px; right: 20px; width: 280px; max-width: calc(100vw - 40px); background: rgba(15, 23, 42, 0.92); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; z-index: 15; transition: all 0.2s ease; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
+    #chat-wrapper.recolhido { width: auto; max-width: none; background: transparent; border: none; box-shadow: none; }
+    #chat-wrapper.recolhido #chatLog, #chat-wrapper.recolhido #chatInputContainer, #chat-wrapper.recolhido #chatTituloTexto { display: none !important; }
+    #chat-wrapper.recolhido #chatHeader { background: #0284c7; border-radius: 20px; padding: 8px 14px; border: 1px solid #38bdf8; }
+    
+    #chatHeader { background: #1e293b; padding: 8px 12px; font-weight: bold; font-size: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    #chatLog { height: 100px; overflow-y: auto; padding: 8px; font-size: 11px; display: flex; flex-direction: column; gap: 5px; }
+    .msg { padding: 5px 8px; border-radius: 6px; background: rgba(255,255,255,0.05); }
+    .msg.voce { background: rgba(56, 189, 248, 0.2); border-left: 3px solid #38bdf8; }
+    .msg.seu_ze { border-left: 3px solid #ef4444; }
+    .msg.dona_maria { border-left: 3px solid #ec4899; }
+    .msg.tiao_bar { border-left: 3px solid #f59e0b; }
+    #chatInputContainer { padding: 6px; background: #0f172a; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .input-row { display: flex; gap: 4px; }
+    input[type="text"] { flex: 1; background: #1e293b; border: 1px solid #334155; color: white; padding: 6px; border-radius: 6px; font-size: 11px; outline: none; }
+    button.send-btn { background: #0284c7; color: white; border: none; padding: 0 10px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 11px; }
+    
+    #color-palette { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: none; gap: 8px; background: rgba(15, 23, 42, 0.85); padding: 8px 12px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); z-index: 10; }
+    .color-btn { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; }
+    .color-btn.selected { border-color: white; transform: scale(1.15); }
+    .modal { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #1e293b; border: 1px solid #38bdf8; padding: 20px; border-radius: 12px; display: none; z-index: 20; min-width: 280px; }
+    .modal h3 { margin-bottom: 12px; font-size: 16px; color: #38bdf8; }
+    .modal-btn { display: block; width: 100%; padding: 10px; margin-top: 8px; background: #0284c7; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; text-align: center; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-
   <div id="webgl-container"></div>
   <div id="crosshair"></div>
 
   <div id="top-bar">
-    <div class="hud-box" id="relogioHud">🕒 10:00 - Dia</div>
-    <div class="hud-box" id="climaHud">☀️ Ensolarado</div>
+    <div class="hud-box" id="relogioHud">🕒 10:00 - Dia ☀️</div>
     <div class="hud-box" id="moedasHud">🪙 50 Moedas</div>
-  </div>
-
-  <div id="mode-indicator">🛠️ Modo: Explorar ('B' p/ Construir)</div>
-  <div id="active-mission-hud">📦 Missão: Nenhuma</div>
-
-  <!-- PALETA DE CORES DE BLOCOS -->
-  <div id="color-palette">
-    <button id="btn-modo-apagar" class="build-tool-btn" onclick="toggleModoApagar()">🟢 Modo: Criar</button>
-    <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin: 0 4px;"></div>
-    <div class="color-btn selected" style="background:#38bdf8" onclick="selecionarCor(0x38bdf8, this)"></div>
-    <div class="color-btn" style="background:#e11d48" onclick="selecionarCor(0xe11d48, this)"></div>
-    <div class="color-btn" style="background:#f59e0b" onclick="selecionarCor(0xf59e0b, this)"></div>
-    <div class="color-btn" style="background:#10b981" onclick="selecionarCor(0x10b981, this)"></div>
-    <div class="color-btn" style="background:#8b5cf6" onclick="selecionarCor(0x8b5cf6, this)"></div>
-    <div class="color-btn" style="background:#f8fafc" onclick="selecionarCor(0xf8fafc, this)"></div>
+    <div class="hud-box" id="climaHud">☀️ Ensolarado</div>
   </div>
 
   <div id="action-tools">
-    <button class="tool-btn" onclick="abrirMenuLoja()">🛍️ Loja</button>
-    <button class="tool-btn" onclick="abrirMenuMissoes()">📜 Trabalhos</button>
-    <button class="tool-btn" onclick="abrirMenuSkin()">👕 Skin</button>
-    <button class="tool-btn" onclick="toggleAudio()">🔊 Áudio: <span id="audioStatus">OFF</span></button>
-    <button class="tool-btn" onclick="toggleWeather()">🌧️ Clima</button>
-    <button class="tool-btn" onclick="toggleBuildMode()">🧱 Bloco (B)</button>
+    <button class="tool-btn" id="audio-btn" onclick="toggleAudio()" title="Som">🔊</button>
+    <button class="tool-btn" onclick="toggleBuildMode()" title="Construir">🧱</button>
+    <button class="tool-btn" onclick="toggleWeather()" title="Clima">🌧️</button>
+    <button class="tool-btn" onclick="abrirMenuLoja()" title="Loja">🛒</button>
+    <button class="tool-btn" onclick="abrirMenuSkin()" title="Skins">👕</button>
+    <button class="tool-btn" onclick="abrirMenuMissoes()" title="Missões">📦</button>
+    <button class="tool-btn" id="car-btn" onclick="toggleEntrarVeiculo()" style="display:none;" title="Carro">🚗</button>
   </div>
 
-  <!-- JOYSTICK & BOTÕES DE AÇÃO -->
-  <div id="joystick-zone">
-    <div id="joystick-knob"></div>
-  </div>
-  <div id="jump-btn" onclick="executarPulo()">🦘</div>
-  <div id="car-btn" style="display:none; position:fixed; bottom:110px; right:20px; width:65px; height:65px; background:#f59e0b; color:white; border-radius:50%; text-align:center; line-height:65px; font-size:28px; box-shadow:0 4px 10px rgba(0,0,0,0.5); z-index:100; cursor:pointer;" onclick="toggleEntrarVeiculo()">🚗</div>
+  <div id="joystick-zone"><div id="joystick-knob"></div></div>
 
-  <!-- MENU DA LOJA -->
-  <div id="shop-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(15, 23, 42, 0.95); color:white; padding:20px; border-radius:12px; width:85%; max-width:400px; z-index:200; box-shadow:0 10px 25px rgba(0,0,0,0.8); border:1px solid #3b82f6;">
-    <h3 style="margin-top:0; color:#60a5fa;">🛍️ Loja da Vila</h3>
-    <div class="mission-card" style="background:rgba(255,255,255,0.05); padding:10px; margin-bottom:10px; border-radius:8px;">
-      <div style="font-weight:bold;">🔦 Lanterna Tática</div>
-      <div style="font-size:12px; color:#cbd5e1;">Ilumina seus passos durante a noite.</div>
-      <button onclick="comprarItem('lanterna', 40)" style="margin-top:5px; background:#10b981; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer;">Comprar (🪙 40)</button>
-    </div>
-    <div class="mission-card" style="background:rgba(255,255,255,0.05); padding:10px; margin-bottom:10px; border-radius:8px;">
-      <div style="font-weight:bold;">⚡ Energético Turbinado</div>
-      <div style="font-size:12px; color:#cbd5e1;">Aumenta a velocidade de caminhada permanentemente.</div>
-      <button onclick="comprarItem('energetico', 60)" style="margin-top:5px; background:#10b981; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer;">Comprar (🪙 60)</button>
-    </div>
-    <button class="close-modal-btn" onclick="fecharMenuLoja()" style="background:#e11d48; color:white; border:none; padding:8px 16px; border-radius:6px; width:100%; margin-top:10px; cursor:pointer;">Fechar</button>
+  <div id="color-palette">
+    <div class="color-btn selected" style="background:#38bdf8;" onclick="selecionarCor(0x38bdf8, this)"></div>
+    <div class="color-btn" style="background:#ef4444;" onclick="selecionarCor(0xef4444, this)"></div>
+    <div class="color-btn" style="background:#22c55e;" onclick="selecionarCor(0x22c55e, this)"></div>
+    <div class="color-btn" style="background:#f59e0b;" onclick="selecionarCor(0xf59e0b, this)"></div>
+    <div class="color-btn" style="background:#a855f7;" onclick="selecionarCor(0xa855f7, this)"></div>
+    <button id="btn-modo-apagar" onclick="toggleModoApagar()" style="background:#10b981; color:white; border:none; padding:4px 8px; border-radius:12px; font-size:11px; font-weight:bold; cursor:pointer;">🟢 Modo: Criar</button>
   </div>
 
-  <!-- MENU DE MISSÕES -->
-  <div id="missions-modal">
-    <h3>Mural de Empregos da Vila</h3>
-    <div class="mission-card">
-      <div class="mission-title">🥖 Entrega de Pão do Seu Zé</div>
-      <div class="mission-desc">Pegue a caixa de pães na Padaria e leve até a Casa Roxa.</div>
-      <div class="mission-reward">Recompensa: 🪙 25 Moedas</div>
-      <button class="accept-mission-btn" onclick="aceitarMissao('pao')">Aceitar</button>
-    </div>
-    <div class="mission-card">
-      <div class="mission-title">💊 Remédio Urgente da Dona Maria</div>
-      <div class="mission-desc">Entregue a caixa de remédios da Farmácia na Padaria do Seu Zé.</div>
-      <div class="mission-reward">Recompensa: 🪙 30 Moedas</div>
-      <button class="accept-mission-btn" onclick="aceitarMissao('remedio')">Aceitar</button>
-    </div>
-    <button class="close-modal-btn" onclick="fecharMenuMissoes()">Fechar</button>
-  </div>
+  <div id="active-mission-hud" class="hud-box" style="position:absolute; top:60px; left:10px; display:none; border-color:#f59e0b;"></div>
 
-  <!-- MENU SKIN -->
-  <div id="skin-modal">
-    <h3>Customizar Personagem</h3>
-    <div class="skin-option">
-      <span>Camisa:</span>
-      <input type="color" id="pickerCamisa" value="#0284c7" onchange="atualizarSkinJogador()">
-    </div>
-    <div class="skin-option">
-      <span>Calça:</span>
-      <input type="color" id="pickerCalca" value="#0f172a" onchange="atualizarSkinJogador()">
-    </div>
-    <div class="skin-option">
-      <span>Acessório:</span>
-      <select id="selectAcessorio" onchange="atualizarSkinJogador()">
-        <option value="nenhum">Nenhum</option>
-        <option value="chapeu">Chapéu Voxel</option>
-      </select>
-    </div>
-    <button class="close-modal-btn" onclick="fecharMenuSkin()">Salvar & Fechar</button>
-  </div>
-
-  <!-- CHAT RETRÁTIL -->
   <div id="chat-wrapper">
-    <button id="toggle-chat-btn" onclick="toggleChatPanel()">👁️ Ocultar Chat</button>
-    <div id="chat-panel">
-      <div id="statusBox" class="status-conexao status-ligacao">
-        <span id="statusTexto">📞 Modo: Ligação Telefônica</span>
-      </div>
-
-      <div class="npc-select-box">
-        <select id="selectNpc">
+    <div id="chatHeader">
+      <span id="chatTituloTexto">💬 Chat da Vila</span>
+      <button id="toggle-chat-btn" onclick="toggleChatPanel()" style="background:none; border:none; color:#38bdf8; font-weight:bold; font-size:11px; cursor:pointer;">✖ Ocultar</button>
+    </div>
+    <div id="chatLog"></div>
+    <div id="chatInputContainer">
+      <div style="margin-bottom:4px; display:flex; justify-content:space-between; align-items:center;">
+        <select id="selectNpc" style="background:#1e293b; color:white; border:1px solid #334155; padding:3px; border-radius:4px; font-size:10px;">
           <option value="seu_ze">Seu Zé (Padaria)</option>
           <option value="dona_maria">Dona Maria (Farmácia)</option>
-          <option value="tiao_bar">Tião (Boteco)</option>
+          <option value="tiao_bar">Tião do Bar</option>
         </select>
-        <button class="action-btn" onclick="fazerNpcsConversarem()">💬 Fofocar</button>
+        <button id="btn-modo-input" onclick="alternarModoEntrada()" style="background:none; border:none; color:#38bdf8; font-size:10px; cursor:pointer;">🎙️ Voz</button>
       </div>
 
-      <div id="chatLog"></div>
-      <div class="input-box">
-        <input type="text" id="inputMensagem" placeholder="Falar com morador..." onkeypress="if(event.key==='Enter') enviarMensagem()">
-        <button class="send-btn" onclick="enviarMensagem()">Mandar</button>
+      <div id="container-teclado" class="input-row">
+        <input type="text" id="inputMensagem" placeholder="Mensagem..." onkeydown="if(event.key==='Enter') enviarMensagem()">
+        <button class="send-btn" onclick="enviarMensagem()">Ok</button>
+      </div>
+
+      <div id="container-voz" style="display:none; text-align:center;">
+        <button id="btn-microfone" onclick="iniciarReconhecimentoVoz()" style="width:100%; background:#10b981; color:white; border:none; padding:6px; border-radius:6px; font-weight:bold; cursor:pointer; font-size:11px;">🎙️ Falar</button>
+        <div id="statusVozTexto" style="font-size:9px; color:#94a3b8; margin-top:2px;">Aguardando...</div>
       </div>
     </div>
   </div>
 
-  <script src="/socket.io/socket.io.js"></script>
+  <div id="shop-modal" class="modal">
+    <h3>🛒 Loja da Vila</h3>
+    <button class="modal-btn" onclick="comprarItem('lanterna', 20)">🔦 Lanterna (20 Moedas)</button>
+    <button class="modal-btn" onclick="comprarItem('energetico', 35)">⚡ Energético (35 Moedas)</button>
+    <button class="modal-btn" onclick="fecharMenuLoja()" style="background:#475569;">Fechar</button>
+  </div>
+
+  <div id="skin-modal" class="modal">
+    <h3>👕 Personalizar Skin</h3>
+    <label style="font-size:12px;">Camisa:</label>
+    <input type="color" id="pickerCamisa" value="#0284c7" onchange="atualizarSkinJogador()" style="width:100%; height:35px; margin-bottom:8px;">
+    <label style="font-size:12px;">Calça:</label>
+    <input type="color" id="pickerCalca" value="#0f172a" onchange="atualizarSkinJogador()" style="width:100%; height:35px; margin-bottom:8px;">
+    <label style="font-size:12px;">Acessório:</label>
+    <select id="selectAcessorio" onchange="atualizarSkinJogador()" style="width:100%; padding:6px; margin-bottom:12px; background:#0f172a; color:white; border:1px solid #334155;">
+      <option value="nenhum">Nenhum</option>
+      <option value="chapeu">Chapéu</option>
+    </select>
+    <button class="modal-btn" onclick="fecharMenuSkin()">Pronto</button>
+  </div>
+
+  <div id="missions-modal" class="modal">
+    <h3>📦 Quadro de Missões</h3>
+    <button class="modal-btn" onclick="aceitarMissao('pao')">🥖 Entregar Pães na Casa Roxa (Ganhe 25)</button>
+    <button class="modal-btn" onclick="aceitarMissao('remedio')">💊 Levar Remédio p/ Padaria (Ganhe 30)</button>
+    <button class="modal-btn" onclick="fecharMenuMissoes()" style="background:#475569;">Fechar</button>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>

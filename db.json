@@ -2111,6 +2111,150 @@
       "autor": "Tião",
       "mensagem": "Oi, Seu Zé! Tudo bem aqui no boteco, amigo! Já ouvi aquela piadinha: Por que o tomate ficou vermelho? Porque viu o molho! Haha! E se quiser refrescar, tem o guaraná trincando por 6 moedas, tá?",
       "timestamp": "2026-09-27T23:13:52.675Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião, me serve um guaraná trincando que hoje o dia na padaria foi quente!",
+      "timestamp": "2026-09-28T14:30:29.622Z"
+    },
+    {
+      "npc_id": "tiao_bar",
+      "autor": "Tião",
+      "mensagem": "Claro, Seu Zé! Aqui vai o seu guaraná trincando, refrescante como a brisa do dia! 6 moedas, é só dar aí.",
+      "timestamp": "2026-09-28T14:30:29.629Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Olá seu Zé tudo bem",
+      "timestamp": "2026-09-28T14:32:00.378Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi! Tudo bem, e você? Gostaria de provar meu chá de camomila por 8 moedas?",
+      "timestamp": "2026-09-28T14:32:01.235Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi seu Zé tá escutando",
+      "timestamp": "2026-09-28T14:32:19.442Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Tião! Aqui na padaria, o Pão Quentinho está fresquinho e custa 5 moedas. Quer comprar?",
+      "timestamp": "2026-09-28T14:32:20.444Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "eu sou o Luciano seu zé não sou o Tião não",
+      "timestamp": "2026-09-28T14:32:33.026Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Olá Luciano! Aqui na padaria, o Pão Quentinho está fresquinho e custa 5 moedas. Quer comprar?",
+      "timestamp": "2026-09-28T14:32:34.238Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "quero sim me dá dois por favor",
+      "timestamp": "2026-09-28T14:32:48.384Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Aqui está seu pão, Luciano! Dois Pão Quentinho, cada um 5 moedas.",
+      "timestamp": "2026-09-28T14:32:49.212Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Jogador",
+      "mensagem": "Oi",
+      "timestamp": "2026-09-28T15:25:24.887Z"
+    },
+    {
+      "npc_id": "dona_maria",
+      "autor": "Dona Maria",
+      "mensagem": "Oi! Tudo bem? Gostaria de experimentar meu chá de camomila, custa 8 moedas?",
+      "timestamp": "2026-09-28T15:25:26.196Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Olá como você está",
+      "timestamp": "2026-09-28T22:46:17.517Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi Luciano, tudo bem? Estou bem, obrigado! Como posso ajudar hoje?",
+      "timestamp": "2026-09-28T22:46:18.918Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "quero dois pãezinhos pode ser",
+      "timestamp": "2026-09-28T22:46:37.290Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Aqui está, Luciano! Dois Pão Quentinho por 10 moedas.",
+      "timestamp": "2026-09-28T22:46:38.018Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "aqui está as suas moedas",
+      "timestamp": "2026-09-28T22:46:47.624Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Muito bem, Luciano! Recebi as 10 moedas. Aqui estão seus dois Pão Quentinho. Aproveite! Se quiser algo mais, é só falar.",
+      "timestamp": "2026-09-28T22:46:48.301Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi seu Zé tá escutando",
+      "timestamp": "2026-09-28T22:47:19.468Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi, Luciano! Estou aqui. Precisa de mais algum pão ou algo?",
+      "timestamp": "2026-09-28T22:47:20.271Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "não não obrigado só para ver se você tá escutando ela",
+      "timestamp": "2026-09-28T22:47:32.083Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Claro, Luciano! Estou aqui. Se quiser mais pão ou algo, é só chamar!",
+      "timestamp": "2026-09-28T22:47:33.101Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Jogador",
+      "mensagem": "Oi seu Zé tudo bem",
+      "timestamp": "2026-09-28T23:11:54.060Z"
+    },
+    {
+      "npc_id": "seu_ze",
+      "autor": "Seu Zé",
+      "mensagem": "Oi, Luciano! Tudo bem por aqui. Como posso ajudar hoje?",
+      "timestamp": "2026-09-28T23:11:55.272Z"
     }
   ]
 }
